@@ -2,7 +2,9 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
-import { funcionExportada, funcionOculta } from './Ejemplos/modulo.js' 
+import { funcionExportada, configuracionesGlobales } from './Ejemplos/modulo.js' 
+// De esta forma se importan los funciones por default
+import funcionPrincipal from './Ejemplos/modulo.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -25,4 +27,5 @@ document.querySelector('#app').innerHTML = `
 setupCounter(document.querySelector('#counter'))
 
 funcionExportada();
-funcionOculta();
+console.log(configuracionesGlobales.idioma);
+funcionPrincipal();
