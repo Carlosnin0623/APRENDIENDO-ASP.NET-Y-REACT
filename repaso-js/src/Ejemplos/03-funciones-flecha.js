@@ -65,7 +65,7 @@ export function EjemploThis() {
   // persona.saludarNormal(); // Undefined
  // persona.saludarFlecha(); // Hola soy Felipe
 
-En una funcion ordinaria, el this no hace referencia al lugar donde fue declarado si no el lugar 
+En una funcion ordinaria, el this no hace referencia al lugar donde fue declarado, si no el lugar 
 donde se ejecuta la funcion, es decir en el archivo donde se llama la funcion, en este caso mi archivo main.js,
 Lo que se ejecuta en el contexto de window, donde window es el objeto que representa a mi navegador en mi caso
 google crome, y busca la propiedad nombre dentro del objeto window que nunca va a estar

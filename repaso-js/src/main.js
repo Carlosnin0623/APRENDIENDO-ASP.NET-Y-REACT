@@ -2,15 +2,16 @@ import './style.css'
 import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
-import { funcionExportada, configuracionesGlobales } from './Ejemplos/modulo.js' 
+import { funcionExportada, configuracionesGlobales } from './Ejemplos/01-modulo.js' 
 // De esta forma se importan los funciones por default
-import funcionPrincipal from './Ejemplos/modulo.js'
-import VariablesEjemplo from './Ejemplos/variables.js'
-import { EjemploThis } from './Ejemplos/funciones-flecha.js'
-import TemplateStringsEjemplo from './Ejemplos/TemplateStrings.js'
-import OperadorTernarioEjemplo from './Ejemplos/operador-ternario.js'
-import LiteralesDeObjetosMejorado from './Ejemplos/objeto-literal-mejorado.js'
-import DestructurarEjemplo from './Ejemplos/destructurar.js'
+import funcionPrincipal from './Ejemplos/01-modulo.js'
+import VariablesEjemplo from './Ejemplos/02-variables.js'
+import { EjemploThis } from './Ejemplos/03-funciones-flecha.js'
+import TemplateStringsEjemplo from './Ejemplos/04-TemplateStrings.js'
+import OperadorTernarioEjemplo from './Ejemplos/05-operador-ternario.js'
+import LiteralesDeObjetosMejorado from './Ejemplos/06-objeto-literal-mejorado.js'
+import DestructurarEjemplo from './Ejemplos/07-destructurar.js'
+import OperadorSpread from './Ejemplos/08-Spread-Operator.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -46,4 +47,5 @@ funcionPrincipal();
 //TemplateStringsEjemplo();
 //OperadorTernarioEjemplo();
 //LiteralesDeObjetosMejorado();
-DestructurarEjemplo();
+//DestructurarEjemplo();
+OperadorSpread();
