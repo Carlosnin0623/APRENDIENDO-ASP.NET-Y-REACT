@@ -1,6 +1,6 @@
 /* Que es una promesa: Basicamente una promesa es una garantia de que una operacion o funcion
-devolvera un resultado en el futuro, y esa cuando haya un resultado en el futuro te va a avisar y en
-respuesta de ese aviso ejecutar nuestro codigo
+devolvera un resultado en el futuro, y cuando haya un resultado en el futuro te va a avisar y en
+respuesta de ese aviso ejecutaremos nuestro codigo.
 */
 
 // Resolviendo una promesa usando fech
