@@ -12,6 +12,9 @@ import OperadorTernarioEjemplo from './Ejemplos/05-operador-ternario.js'
 import LiteralesDeObjetosMejorado from './Ejemplos/06-objeto-literal-mejorado.js'
 import DestructurarEjemplo from './Ejemplos/07-destructurar.js'
 import OperadorSpread from './Ejemplos/08-Spread-Operator.js'
+import { Rectangulo, Cuadrado } from './Ejemplos/09-Clases.js'
+import MapEjemplo from './Ejemplos/10-Arreglo-map.js'
+import { Promesa, AsincAwait } from './Ejemplos/11-Asincrona.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -28,6 +31,10 @@ document.querySelector('#app').innerHTML = `
     <p class="read-the-docs">
       Click on the Vite logo to learn more
     </p>
+
+    <div id="listado">
+
+    </div>
   </div>
 `
 
@@ -48,4 +55,19 @@ funcionPrincipal();
 //OperadorTernarioEjemplo();
 //LiteralesDeObjetosMejorado();
 //DestructurarEjemplo();
-OperadorSpread();
+//OperadorSpread();
+
+// LLamando una clase Reactangulo para luego instanciarla
+//const rectangulo1 = new Rectangulo(2,3);
+
+//console.log(rectangulo1);
+//console.log(rectangulo1.area());
+
+//const cuadrado1 = new Cuadrado(5);
+//console.log(cuadrado1.area());
+//const lista = MapEjemplo();
+
+//document.querySelector("#listado").innerHTML = lista;
+
+Promesa();
+AsincAwait();
