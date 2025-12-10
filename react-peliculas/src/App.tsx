@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useState } from "react"
+import ContenidoDinamico from "./ContenidoDinamico";
 
-function App() {
 
-  const [horaActual, setHoraActual] = useState(new Date());
+export default function App() {
 
-  useEffect(() => {
-    const timerId = setInterval(() => {
-      setHoraActual(new Date());
-    },1000)
-
-    return () => clearInterval(timerId)
-  }, []);
+   const [mostrar, setMostrar] = useState(false);
 
   return (
-    <div>
-      <h3>Ejemplo React</h3>
-      <input/>
-      <div>{horaActual.toString()}</div>
-    </div>
-  )
-}
+    <>
+      <input type="checkbox" onChange={(e) => setMostrar(e.target.checked)}/>
+      <label>Mostrar contenido oculto</label>
 
-export default App
+      <ContenidoDinamico mostrarContenido={mostrar} />
+    </>
+  )
+
+}
