@@ -1,7 +1,7 @@
 export default function ContenidoDinamico(props: ContenidoDinamicoProps){
   return(
     <>
-     {props.mostrarContenido ? <p>Mostrando el mensaje secreto</p> : <p>Ocultando el mensaje</p>}
+     {props.mostrarContenido ? <p>Mostrando el mensaje secreto</p> : undefined}
     </>
   )
 }
