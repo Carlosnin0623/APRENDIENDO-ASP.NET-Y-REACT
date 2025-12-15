@@ -1,6 +1,13 @@
+import { memo } from "react";
 import type Persona from "./Persona.model";
 
-export default function Fila({persona, remover} : FilaProps) {
+const FilaMemorizar = memo(function FilaMemorizar({persona, remover} : FilaProps) {
+
+   console.log(`Cargar fila de ${persona.nombre}`);
+
+   if(persona.nombre === 'Roberto'){
+      throw Error();
+   }
     return (
         <>
             <tr>
@@ -14,9 +21,11 @@ export default function Fila({persona, remover} : FilaProps) {
             </tr>
         </>
     )
-}
+});
 
 interface FilaProps {
     persona: Persona;
     remover: (p: Persona) => void;
 }
+
+export default FilaMemorizar;

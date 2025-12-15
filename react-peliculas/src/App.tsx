@@ -1,9 +1,10 @@
 import { useState } from "react"
 import ContenidoDinamico from "./ContenidoDinamico";
 import ContenidoDinamicoIf from "./ContenidoDinamicoIf";
-import Tabla from "./Tabla";
+import TablaMemorizar from "./EjemploUseMemo/TablaMemorizar";
 import EjemploUseEffect from "./EjemploUseEffect";
 import EjemploUseContext from "./EjemploUseContext/EjemploUseContext";
+import EjemploMemorizar from "./EjemploUseMemo/EjemploMemorizar";
 
 
 export default function App() {
@@ -13,6 +14,8 @@ export default function App() {
    const [calificacion, setCalificacion] = useState<number | null>(null);
 
    const [mostrado, setMostrado] = useState(false);
+
+   const [nombre, setNombre] = useState('');
    
   return (
     <>
@@ -28,8 +31,11 @@ export default function App() {
 
       {calificacion ? <ContenidoDinamicoIf Calificacion={calificacion} /> : undefined}
 
+      <p>El texto es: <input type="text" onChange={e => setNombre(e.target.value)}></input></p> 
 
-      <Tabla/>
+      <p>Mi nombre es: {nombre} </p>
+
+      <TablaMemorizar/>
 
        <input type="checkbox" defaultChecked={mostrado} onChange={e => setMostrado(e.target.checked)}/> Mostra Componente
 
@@ -38,6 +44,10 @@ export default function App() {
 
       <h2>Ejemplo Use Context</h2>
       <EjemploUseContext />
+
+
+      <h2>Ejemplo Memorizar</h2>
+      <EjemploMemorizar />
     </>
   )
 

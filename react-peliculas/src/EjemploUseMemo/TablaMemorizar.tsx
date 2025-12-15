@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { memo, useCallback, useState } from "react";
 import type Persona from "./Persona.model";
-import Fila from "./Fila";
+import FilaMemorizar from "./FilaMemorizar";
+import { ErrorBoundary } from "react-error-boundary";
+;
 
-export default function Tabla() {
+const TablaMemorizar = memo(function TablaMemorizar() {
+
+
+    console.log('Renderizando el componente Tabla');
 
     const personasFuente: Persona[] = [
 
@@ -17,12 +22,9 @@ export default function Tabla() {
 
     const [personas, setPersonas] = useState(personasFuente);
 
-    const removerPersona = (persona: Persona) => {
-        setPersonas(
-            personas.filter(p => p.id !== persona.id)
-        )
-
-    }
+    const removerPersona = useCallback((persona: Persona) => {
+        setPersonas(estadoActual => estadoActual.filter(p => p.id !== persona.id));
+    }, []);
 
     return (
         <>
@@ -37,7 +39,18 @@ export default function Tabla() {
                     </tr>
                 </thead>
                 <tbody>
-                    {personas ? personas.map(p => <Fila key={p.id} persona={p} remover={removerPersona} />) : <p>'No hay valores en la tabla'</p>}
+                    {personas.map(p =>
+                        <ErrorBoundary key={p.id} fallback=
+                        {
+                        <>
+                         <tr>
+                            <td colSpan={3} style={{color:"red"}}>--Error: {p.nombre}</td>
+                         </tr>
+                        </>
+                        }>
+                        <FilaMemorizar key={p.id} persona={p} remover={removerPersona} />
+                        </ErrorBoundary>
+                    )}
                 </tbody>
             </table>
 
@@ -49,4 +62,6 @@ export default function Tabla() {
         </>
     )
 
-}
+});
+
+export default TablaMemorizar
