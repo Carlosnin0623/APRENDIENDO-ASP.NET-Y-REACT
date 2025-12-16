@@ -1,54 +1,35 @@
-import { useState } from "react"
-import ContenidoDinamico from "./ContenidoDinamico";
-import ContenidoDinamicoIf from "./ContenidoDinamicoIf";
-import TablaMemorizar from "./EjemploUseMemo/TablaMemorizar";
-import EjemploUseEffect from "./EjemploUseEffect";
-import EjemploUseContext from "./EjemploUseContext/EjemploUseContext";
-import EjemploMemorizar from "./EjemploUseMemo/EjemploMemorizar";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
+function App() {
+  const [count, setCount] = useState(0)
 
-export default function App() {
-
-   const [mostrar, setMostrar] = useState(false);
-
-   const [calificacion, setCalificacion] = useState<number | null>(null);
-
-   const [mostrado, setMostrado] = useState(false);
-
-   const [nombre, setNombre] = useState('');
-   
   return (
     <>
-      <input type="checkbox" onChange={(e) => setMostrar(e.target.checked)}/>
-      <label>Mostrar contenido oculto</label>
-
-      <ContenidoDinamico mostrarContenido={mostrar} />
-
-      <hr/>
-
-      <label>Ingrese la calificación</label>
-      <input type="number" onChange={e => setCalificacion(Number(e.target.value))}></input>
-
-      {calificacion ? <ContenidoDinamicoIf Calificacion={calificacion} /> : undefined}
-
-      <p>El texto es: <input type="text" onChange={e => setNombre(e.target.value)}></input></p> 
-
-      <p>Mi nombre es: {nombre} </p>
-
-      <TablaMemorizar/>
-
-       <input type="checkbox" defaultChecked={mostrado} onChange={e => setMostrado(e.target.checked)}/> Mostra Componente
-
-       
-      {mostrado ? <EjemploUseEffect /> : undefined}
-
-      <h2>Ejemplo Use Context</h2>
-      <EjemploUseContext />
-
-
-      <h2>Ejemplo Memorizar</h2>
-      <EjemploMemorizar />
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </>
   )
-
 }
+
+export default App
