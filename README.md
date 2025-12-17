@@ -1,2 +1,8 @@
 # APRENDIENDO-ASP.NET-Y-REACT
+
 APRENDEINDO JAVASCRIPT Y REACT
+
+npm install
+
+npm run dev
+
