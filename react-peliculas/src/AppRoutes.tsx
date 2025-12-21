@@ -11,6 +11,7 @@ import CrearCines from "./features/cines/componentes/CrearCines";
 import EditarCines from "./features/cines/componentes/EditarCines";
 import CrearPelicula from "./features/peliculas/componentes/CrearPelicula";
 import EditarPelicula from "./features/peliculas/componentes/EditarPelicula";
+import RutaNoEncontrada from "./componentesGlobales/RutaNoEncontrada";
 
 export default function AppRoutes() {
 
@@ -20,20 +21,23 @@ export default function AppRoutes() {
 
             <Route path='/generos' element={<IndiceGeneros />} />
             <Route path='/generos/crear' element={<CrearGenero />} />
-            <Route path='/generos/editar' element={<EditarGenero />} />
+            <Route path='/generos/editar/:id' element={<EditarGenero />} />
 
             <Route path='/actores' element={<IndiceActores />} />
             <Route path='/actores/crear' element={<CrearActores />} />
-            <Route path='/actores/editar' element={<EditarActores />} />
+            <Route path='/actores/editar/:id' element={<EditarActores />} />
 
 
             <Route path='/cines' element={<IndiceCines />} />
             <Route path='/cines/crear' element={<CrearCines />} />
-            <Route path='/cines/editar' element={<EditarCines />} />
+            <Route path='/cines/editar/:id' element={<EditarCines />} />
 
 
             <Route path='/peliculas/crear' element={<CrearPelicula />} />
-            <Route path='/peliculas/editar' element={<EditarPelicula/>} />
+            <Route path='/peliculas/editar:id' element={<EditarPelicula/>} />
+            
+            
+           <Route path='*' element={<RutaNoEncontrada/>} />
         </Routes>
     )
 }

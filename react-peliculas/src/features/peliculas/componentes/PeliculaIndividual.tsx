@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import Boton from "../../../componentesGlobales/Boton";
 import type Pelicula from "../modelos/pelicula.model";
 import './PeliculaIndividual.css'
@@ -5,6 +6,7 @@ import './PeliculaIndividual.css'
 export default function PeliculaIndividual(props: PeliculaIndividualProps) {
 
   const contruirLink = (): string => `/pelicula/${props.pelicula.id}`;
+  const navigate = useNavigate();
 
   return (
     <div className="div">
@@ -14,7 +16,7 @@ export default function PeliculaIndividual(props: PeliculaIndividualProps) {
       <p>
         <a href={contruirLink()}>{props.pelicula.titulo}</a>
       </p>
-      <Boton> Mi Boton de Pruebas</Boton>
+      <Boton onClick={() => navigate('')} > Mi Boton de Pruebas</Boton>
     </div>
   )
 
