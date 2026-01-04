@@ -5,14 +5,31 @@ import * as yup from 'yup';
 import { primeraLetraMayuscula } from "../../../validaciones/Validaciones";
 import Boton from "../../../componentesGlobales/Boton";
 import { NavLink } from "react-router";
+import Mapa from "../../../componentesGlobales/Mapa/Mapa";
+import type Coordenada from "../../../componentesGlobales/Mapa/Coordenada.model";
 
 export default function FormularioCine(props: FormularioCineProps) {
 
-    const { register, handleSubmit, formState: { errors, isValid, isSubmitting } } = useForm<Cinecreacion>({
+    const { register, handleSubmit,
+        setValue,
+        formState: { errors, isValid, isSubmitting } } = useForm<Cinecreacion>({
         resolver: yupResolver(reglasDeValidacion),
         mode: 'onChange',
         defaultValues: props.modelo ?? { nombre: '' }
-    })
+    });
+
+    function transformarCoordenadas() : Coordenada[] | undefined {
+        if(props.modelo){
+            const respuesta: Coordenada = {
+                lat: props.modelo.latitud,
+                lng: props.modelo.longitud
+            }
+
+            return [respuesta];
+        }
+
+        return undefined
+    }
 
     return (
         <>
@@ -24,6 +41,21 @@ export default function FormularioCine(props: FormularioCineProps) {
                     />
                     {errors.nombre && <p className="error">{errors.nombre.message}</p>}
                 </div>
+
+                <div className="mt-4">
+                   <Mapa 
+                    coordenadas={transformarCoordenadas()}
+                    LugarSeleccionado={coordenada => {
+                     setValue('latitud', coordenada.lat, {
+                        shouldValidate: true
+                     });
+
+                      setValue('longitud', coordenada.lng, {
+                        shouldValidate: true
+                     });
+                   }}/>
+                </div>
+
                 <div className="mt-2">
                     <Boton type="submit" disabled={!isValid || isSubmitting}>{isSubmitting ? 'Enviando...' : 'Enviar'}</Boton>
                     <NavLink to="/cines" className="btn btn-secondary ms-2">Cancelar</NavLink>
@@ -41,6 +73,8 @@ interface FormularioCineProps {
 }
 
 const reglasDeValidacion = yup.object({
-    nombre: yup.string().required('El nombre es obligatorio').test(primeraLetraMayuscula())
+    nombre: yup.string().required('El nombre es obligatorio').test(primeraLetraMayuscula()),
+    latitud: yup.number().required(),
+    longitud: yup.number().required(),
 })
 
