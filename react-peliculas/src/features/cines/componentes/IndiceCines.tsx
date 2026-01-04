@@ -7,7 +7,7 @@ export default function IndiceCines(){
     return(
         <>
         <h3>Cines</h3>
-        <Boton onClick={() => navigate('/actores/crear')}>Crear Cine</Boton>
+        <Boton onClick={() => navigate('/cines/crear')}>Crear Cine</Boton>
         </>
         
     )

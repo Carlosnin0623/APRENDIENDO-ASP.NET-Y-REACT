@@ -1,4 +1,4 @@
-export default function primeraLetraMayuscula(){
+export function primeraLetraMayuscula(){
     return {
         name: 'Primera-letra-mayuscula',
         message: 'La primera letra debe ser mayúscula',
@@ -8,6 +8,21 @@ export default function primeraLetraMayuscula(){
                 return primeraLetra === primeraLetra.toUpperCase();
             }
             return true;
+        }
+    }
+}
+
+export function fechaNoPuedeSerFutura(){
+
+    return{
+        name: 'fecha-no-es-futura',
+        message: 'La fecha no puede ser del futuro',
+        test: (valor : string | undefined) => {
+            if(!valor) return true;
+
+            const fecha = new Date(valor);
+            const hoy = new Date();
+            return fecha <= hoy
         }
     }
 }

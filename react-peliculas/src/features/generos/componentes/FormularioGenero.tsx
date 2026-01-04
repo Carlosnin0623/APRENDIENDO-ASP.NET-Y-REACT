@@ -3,7 +3,7 @@ import Boton from "../../../componentesGlobales/Boton";
 import type GeneroCreacion from "../modelos/GeneroCreacion.model";
 import * as yup from 'yup';
 import { yupResolver } from "@hookform/resolvers/yup";
-import primeraLetraMayuscula from "../../../validaciones/Validaciones";
+import { primeraLetraMayuscula } from "../../../validaciones/Validaciones";
 import { useForm, type SubmitHandler } from "react-hook-form";
 
 
