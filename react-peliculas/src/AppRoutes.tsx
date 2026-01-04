@@ -35,7 +35,7 @@ export default function AppRoutes() {
 
 
             <Route path='/peliculas/crear' element={<CrearPelicula />} />
-            <Route path='/peliculas/editar:id' element={<EditarPelicula/>} />
+            <Route path='/peliculas/editar/:id' element={<EditarPelicula/>} />
 
             <Route path="/peliculas/filtrar" element={<FiltrarPeliculas/>} />
             
