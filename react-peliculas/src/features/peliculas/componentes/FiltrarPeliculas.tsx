@@ -67,7 +67,7 @@ export default function FiltrarPeliculas(){
     )
 }
 
-interface FormType{
+interface FormType{                                                         
     titulo: string;
     generoId: number;
     proximosEstrenos: boolean;
