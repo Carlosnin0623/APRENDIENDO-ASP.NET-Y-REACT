@@ -3,4 +3,6 @@ export default interface PeliculaCreacion{
     fechaLanzamiento: string;
     trailer?: string;
     poster?: File | string;
+    generosIds?: number[];
+    cinesIds?: number[];
 }
