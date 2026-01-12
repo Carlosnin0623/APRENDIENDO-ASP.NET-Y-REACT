@@ -6,6 +6,7 @@ import type { SubmitHandler } from "react-hook-form";
 import Cargando from "../../../componentesGlobales/Cargando";
 import type Genero from "../../generos/modelos/Genero.model";
 import type Cine from "../../cines/modelos/Cine.model";
+import type ActorPelicula from "../modelos/ActorPelicula.model";
 
 export default function EditarPelicula() {
 
@@ -39,6 +40,15 @@ export default function EditarPelicula() {
   ];
   const cinesNoSeleccionados: Cine[] = [
     { id: 2, nombre: 'Sambil', latitud: 0, longitud: 0}
+  ];
+
+  const actoresSeleccionados: ActorPelicula[] = [
+    {
+      id: 1,
+      nombre: 'Tom Holland',
+      personaje: 'Spider-Man',
+      foto: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Tom_Holland_during_pro-am_Wentworth_golf_club_2023-2.jpg/250px-Tom_Holland_during_pro-am_Wentworth_golf_club_2023-2.jpg'
+    },
   ]
 
   return (
@@ -48,7 +58,8 @@ export default function EditarPelicula() {
       generosNoSeleccionados={generosNoSeleccionados}
       generosSeleccionados={generosSeleccionados}
       cinesSeleccionados={cinesSeleccionados}
-      cinesNoSeleccionados={cinesNoSeleccionados}  /> : <Cargando />}
+      cinesNoSeleccionados={cinesNoSeleccionados}
+      actoresSeleccionados={actoresSeleccionados}  /> : <Cargando />}
     </>
 
   )

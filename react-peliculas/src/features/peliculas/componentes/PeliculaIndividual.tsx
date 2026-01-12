@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import Boton from "../../../componentesGlobales/Boton";
 import type Pelicula from "../modelos/pelicula.model";
-import './PeliculaIndividual.css'
+import style from './PeliculaIndividual.module.css'
 
 export default function PeliculaIndividual(props: PeliculaIndividualProps) {
 
@@ -9,7 +9,7 @@ export default function PeliculaIndividual(props: PeliculaIndividualProps) {
   const navigate = useNavigate();
 
   return (
-    <div className="div">
+    <div className={style.div}>
       <a href={contruirLink()}>
         <img alt="poster" src={props.pelicula.poster}></img>
       </a>
