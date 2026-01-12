@@ -1,15 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using PeliculasApi.Entidades;
 
 namespace PeliculasApi.Controllers
 
 {
     [Route("api/generos")]
+    [ApiController]
     public class GenerosController : ControllerBase
     {
         [HttpGet]
         [HttpGet("Listado")] // Puedes tener variar rutas para la misma acción 
         [HttpGet("/Listado-generos")]
+        [OutputCache] // Con esto ya le estamos agregando Cache a una de las peticiones https
         public List<Genero> Get() // Recibir datos o mostrar
         {
             var repositorio = new RepositorioEnMemoria();
@@ -20,7 +23,7 @@ namespace PeliculasApi.Controllers
         /* [HttpGet("{id}/{nombre?}")] /* El simboolo ? significa que el nombre es opcional y no siempre debe estar presente */
 
         [HttpGet("{id:int}")]
-
+        [OutputCache] // Con esto ya le estamos agregando Cache a una de las peticiones http
         public async Task<ActionResult<Genero>> Get(int id)  // api/generos/1
         {
             var repositorio = new RepositorioEnMemoria();
@@ -49,7 +52,7 @@ namespace PeliculasApi.Controllers
         }
 
         [HttpPost]
-        public void Post() // Enviar datos
+        public void Post([FromBody]Genero genero) // Enviar datos
         {
 
         }
