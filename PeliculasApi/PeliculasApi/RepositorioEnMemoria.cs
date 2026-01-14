@@ -1,4 +1,5 @@
 ﻿using PeliculasApi.Entidades;
+using System.Security.Authentication.ExtendedProtection;
 
 namespace PeliculasApi
 {
@@ -32,6 +33,11 @@ namespace PeliculasApi
         {
             await Task.Delay(TimeSpan.FromSeconds(3));
             return _generos.FirstOrDefault(g => g.Nombre == nombre);
+        }
+
+        public bool Existe (string nombre)
+        {
+            return _generos.Any(g => g.Nombre == nombre);
         }
 
         // Si tenemos que retornar un metodo void y debe ser asincrono debemos hacerlo de esta forma no poder void como retorno

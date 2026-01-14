@@ -300,25 +300,9 @@
             "format": "int32"
           },
           "nombre": {
-            "maxLength": 10,
+            "maxLength": 15,
             "minLength": 0,
             "type": "string"
-          },
-          "edad": {
-            "maximum": 120,
-            "minimum": 18,
-            "type": "integer",
-            "format": "int32"
-          },
-          "tarjetaDeCredito": {
-            "type": "string",
-            "format": "credit-card",
-            "nullable": true
-          },
-          "url": {
-            "type": "string",
-            "format": "uri",
-            "nullable": true
           }
         },
         "additionalProperties": false
