@@ -1,3 +1,6 @@
+using PeliculasApi.Interfaz;
+using PeliculasApi.Repositorios;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,7 +18,14 @@ builder.Services.AddOutputCache(opciones => {
 
      // Esto es para espeficar el tiempo que durara la info en cache, debe ser un tiempo acorte de tu aplicacion
      opciones.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(15); 
-  }); 
+  });
+
+/* Configurando servicio IRepostorio para aplicar la inversion de Dependencia 
+   IRepositorio: Es es servicio
+   RepositorioEnMemoria: Es la implementacion de ese servicio
+ */
+
+builder.Services.AddTransient<IRepositorio, RepositorioEnMemoria>();
 
 var app = builder.Build();
 

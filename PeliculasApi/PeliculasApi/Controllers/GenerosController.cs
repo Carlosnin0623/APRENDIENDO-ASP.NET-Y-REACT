@@ -1,21 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
 using PeliculasApi.Entidades;
+using PeliculasApi.Interfaz;
 
 namespace PeliculasApi.Controllers
 
 {
     [Route("api/generos")]
     [ApiController]
+
     public class GenerosController : ControllerBase
     {
+        private readonly IRepositorio repositorio; // Inyeccion de dependencia
+        public GenerosController(IRepositorio repositorio)
+        {
+            this.repositorio = repositorio;
+        }
+
         [HttpGet]
         [HttpGet("Listado")] // Puedes tener variar rutas para la misma acción 
         [HttpGet("/Listado-generos")]
         [OutputCache] // Con esto ya le estamos agregando Cache a una de las peticiones https
         public List<Genero> Get() // Recibir datos o mostrar
         {
-            var repositorio = new RepositorioEnMemoria();
             var generos = repositorio.ObtenerTodosLosGeneros();
             return generos;
         }
@@ -26,7 +33,6 @@ namespace PeliculasApi.Controllers
         [OutputCache] // Con esto ya le estamos agregando Cache a una de las peticiones http
         public async Task<ActionResult<Genero>> Get(int id)  // api/generos/1
         {
-            var repositorio = new RepositorioEnMemoria();
             var genero = await repositorio.ObtenerPorId(id);
 
             if(genero is null)
@@ -40,7 +46,7 @@ namespace PeliculasApi.Controllers
         [HttpGet("{nombre}")]
         public async Task<ActionResult<Genero>>  Get(string nombre)  // api/generos/comedia
         {
-            var repositorio = new RepositorioEnMemoria();
+
             var genero = await repositorio.ObtenerPorNombre(nombre);
 
             if(genero is null)
@@ -54,8 +60,8 @@ namespace PeliculasApi.Controllers
         [HttpPost]
         public IActionResult Post([FromBody]Genero genero) // Enviar datos
         {
-            var reposotorio = new RepositorioEnMemoria();
-            var yaExsite = reposotorio.Existe(genero.Nombre);
+
+            var yaExsite = repositorio.Existe(genero.Nombre);
 
             if (yaExsite)
             {

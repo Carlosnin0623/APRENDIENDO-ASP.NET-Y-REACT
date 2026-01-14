@@ -1,9 +1,10 @@
 ﻿using PeliculasApi.Entidades;
+using PeliculasApi.Interfaz;
 using System.Security.Authentication.ExtendedProtection;
 
-namespace PeliculasApi
+namespace PeliculasApi.Repositorios
 {
-    public class RepositorioEnMemoria
+    public class RepositorioEnMemoria : IRepositorio
     {
         private List<Genero> _generos;
 
@@ -13,8 +14,8 @@ namespace PeliculasApi
             {
                 new Genero{Id = 1, Nombre = "Comedia"},
                 new Genero{Id = 2, Nombre = "Acción"},
+                new Genero{Id = 3, Nombre = "Drama"},
             };
-
 
         }
 
@@ -23,13 +24,13 @@ namespace PeliculasApi
             return _generos;
         }
 
-        public async Task<Genero?> ObtenerPorId(int id)
+        public async Task<Genero> ObtenerPorId(int id)
         {
             await Task.Delay(TimeSpan.FromSeconds(3));
             return _generos.FirstOrDefault(g => g.Id == id);
         }
 
-        public async Task<Genero?> ObtenerPorNombre(string nombre)
+        public async Task<Genero> ObtenerPorNombre(string nombre)
         {
             await Task.Delay(TimeSpan.FromSeconds(3));
             return _generos.FirstOrDefault(g => g.Nombre == nombre);

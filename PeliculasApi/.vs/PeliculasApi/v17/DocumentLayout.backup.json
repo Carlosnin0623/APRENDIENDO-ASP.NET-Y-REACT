@@ -1,34 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\",
+  "WorkspaceRootPath": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\controllers\\generoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\controllers\\generoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\repositorioenmemoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\repositorioenmemoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\loteka\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\entidades\\genero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\entidades\\genero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\loteka\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\controllers\\generoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\controllers\\generoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\validaciones\\primeraletramayusculaattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\validaciones\\primeraletramayusculaattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\loteka\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\loteka\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\interfaces\\irepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\interfaces\\irepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\loteka\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\repositorios\\repositorioenmemoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\repositorios\\repositorioenmemoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,96 +30,72 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PrimeraLetraMayusculaAttribute.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Validaciones\\PrimeraLetraMayusculaAttribute.cs",
-              "RelativeDocumentMoniker": "PeliculasApi\\Validaciones\\PrimeraLetraMayusculaAttribute.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Validaciones\\PrimeraLetraMayusculaAttribute.cs",
-              "RelativeToolTip": "PeliculasApi\\Validaciones\\PrimeraLetraMayusculaAttribute.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "PeliculasApi\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "PeliculasApi\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T17:48:41.522Z",
+              "WhenOpened": "2026-01-14T17:36:47.899Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "IRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Interfaces\\IRepositorio.cs",
+              "RelativeDocumentMoniker": "PeliculasApi\\Interfaces\\IRepositorio.cs",
+              "ToolTip": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Interfaces\\IRepositorio.cs",
+              "RelativeToolTip": "PeliculasApi\\Interfaces\\IRepositorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T17:21:53.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "GenerosController.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\GenerosController.cs",
+              "DocumentMoniker": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\GenerosController.cs",
               "RelativeDocumentMoniker": "PeliculasApi\\Controllers\\GenerosController.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\GenerosController.cs",
+              "ToolTip": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\GenerosController.cs",
               "RelativeToolTip": "PeliculasApi\\Controllers\\GenerosController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwEAAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T22:24:56.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WeatherForecastController.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\WeatherForecastController.cs",
-              "RelativeDocumentMoniker": "PeliculasApi\\Controllers\\WeatherForecastController.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\WeatherForecastController.cs",
-              "RelativeToolTip": "PeliculasApi\\Controllers\\WeatherForecastController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T18:12:44.266Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "RepositorioEnMemoria.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\RepositorioEnMemoria.cs",
-              "RelativeDocumentMoniker": "PeliculasApi\\RepositorioEnMemoria.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\RepositorioEnMemoria.cs",
-              "RelativeToolTip": "PeliculasApi\\RepositorioEnMemoria.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAowCsAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Repositorios\\RepositorioEnMemoria.cs",
+              "RelativeDocumentMoniker": "PeliculasApi\\Repositorios\\RepositorioEnMemoria.cs",
+              "ToolTip": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Repositorios\\RepositorioEnMemoria.cs",
+              "RelativeToolTip": "PeliculasApi\\Repositorios\\RepositorioEnMemoria.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-11T18:06:15.791Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Genero.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Entidades\\Genero.cs",
-              "RelativeDocumentMoniker": "PeliculasApi\\Entidades\\Genero.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Entidades\\Genero.cs",
-              "RelativeToolTip": "PeliculasApi\\Entidades\\Genero.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-11T18:03:30.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Program.cs",
               "RelativeDocumentMoniker": "PeliculasApi\\Program.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Program.cs",
               "RelativeToolTip": "PeliculasApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-03T20:19:41.487Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "PeliculasApi\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "PeliculasApi\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-03T20:16:59.269Z"
             }
           ]
         }
