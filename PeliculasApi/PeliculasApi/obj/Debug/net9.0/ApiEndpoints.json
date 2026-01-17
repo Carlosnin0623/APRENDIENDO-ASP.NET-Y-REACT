@@ -141,6 +141,16 @@
   },
   {
     "ContainingType": "PeliculasApi.Controllers.GenerosController",
+    "Method": "GetServiciosTiempoDeVida",
+    "RelativePath": "api/generos/servicios-tiempos-de-vida",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.GenerosController",
     "Method": "Get",
     "RelativePath": "Listado-generos",
     "HttpMethod": "GET",

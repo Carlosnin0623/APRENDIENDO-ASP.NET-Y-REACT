@@ -108,3 +108,4 @@ C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\ob
 C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\obj\Debug\net9.0\PeliculasApi.pdb
 C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\obj\Debug\net9.0\PeliculasApi.genruntimeconfig.cache
 C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\obj\Debug\net9.0\ref\PeliculasApi.dll
+C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\obj\Debug\net9.0\swae.build.ex.cache

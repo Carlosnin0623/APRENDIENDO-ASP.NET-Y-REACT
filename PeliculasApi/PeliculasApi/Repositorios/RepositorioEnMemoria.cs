@@ -36,6 +36,11 @@ namespace PeliculasApi.Repositorios
             return _generos.FirstOrDefault(g => g.Nombre == nombre);
         }
 
+        public void Crear(Genero genero)
+        {
+            _generos.Add(genero);
+        }
+
         public bool Existe (string nombre)
         {
             return _generos.Any(g => g.Nombre == nombre);

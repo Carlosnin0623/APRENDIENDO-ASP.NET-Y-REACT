@@ -10,8 +10,9 @@ namespace PeliculasApi.Interfaz
         Task<Genero?> ObtenerPorId(int id);
 
         Task<Genero?> ObtenerPorNombre(string  nombre);
+        void Crear(Genero genero);
 
         bool Existe(string nombre);
-   
+        
     }
 }

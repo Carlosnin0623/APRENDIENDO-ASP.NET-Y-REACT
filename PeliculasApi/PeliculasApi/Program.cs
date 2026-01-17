@@ -1,3 +1,4 @@
+using PeliculasApi;
 using PeliculasApi.Interfaz;
 using PeliculasApi.Repositorios;
 
@@ -17,7 +18,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddOutputCache(opciones => {
 
      // Esto es para espeficar el tiempo que durara la info en cache, debe ser un tiempo acorte de tu aplicacion
-     opciones.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(15); 
+     opciones.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(60); 
   });
 
 /* Configurando servicio IRepostorio para aplicar la inversion de Dependencia 
@@ -25,7 +26,21 @@ builder.Services.AddOutputCache(opciones => {
    RepositorioEnMemoria: Es la implementacion de ese servicio
  */
 
-builder.Services.AddTransient<IRepositorio, RepositorioEnMemoria>();
+builder.Services.AddSingleton<IRepositorio, RepositorioEnMemoria>();
+
+/* Ejemplo de los 3 tipos de servicios disponible en C# */
+
+// Servicio Transient o servicio transitorio
+builder.Services.AddTransient<ServicioTransient>();
+
+// Servicio Scope o Servicio de alcanse
+
+builder.Services.AddScoped<ServicioScope>();
+
+// Servicio Singleton o Solitario
+
+builder.Services.AddSingleton<ServicioSingleton>();
+
 
 var app = builder.Build();
 
@@ -41,7 +56,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseOutputCache();  // El app.UseOutputCache(); debe ir antes del app.UseAuthorization(); //
+app.UseOutputCache();  // El app.UseOutputCache(): Sirve para agregar cache a la aplicacion y debe ir antes del app.UseAuthorization();  //
 
 app.UseAuthorization();
 
