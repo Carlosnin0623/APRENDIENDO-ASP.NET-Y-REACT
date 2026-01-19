@@ -91,6 +91,7 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "ObtenerGeneroPorId"
   }
 ]

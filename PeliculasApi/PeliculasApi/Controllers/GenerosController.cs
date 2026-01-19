@@ -12,13 +12,14 @@ namespace PeliculasApi.Controllers
     {  
         
         private readonly IOutputCacheStore outputCacheStore;
+        private readonly ApplicationDbContext context;
         private const string cacheTag = "generos";
 
         public GenerosController(
-            IOutputCacheStore outputCacheStore,
-            IConfiguration configuration)
+            IOutputCacheStore outputCacheStore, ApplicationDbContext context)
         {
             this.outputCacheStore = outputCacheStore;
+            this.context = context;
         }
 
         [HttpGet]
@@ -31,7 +32,7 @@ namespace PeliculasApi.Controllers
 
         /* [HttpGet("{id}/{nombre?}")] /* El simboolo ? significa que el nombre es opcional y no siempre debe estar presente */
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:int}", Name = "ObtenerGeneroPorId")]
         [OutputCache(Tags = [cacheTag] )] // Con esto ya le estamos agregando Cache a una de las peticiones http
         public async Task<ActionResult<Genero>> Get(int id)  // api/generos/1
         {
@@ -42,7 +43,9 @@ namespace PeliculasApi.Controllers
         [HttpPost] // Enviar datos al servidor
         public async Task<IActionResult> Post([FromBody]Genero genero) // Enviar datos
         {
-            throw new NotImplementedException();
+            context.Add(genero);
+            await context.SaveChangesAsync();
+            return CreatedAtRoute("ObtenerGeneroPorId", new { id = genero.Id }, genero);
         }
 
         [HttpPut]
