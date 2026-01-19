@@ -11,10 +11,6 @@ namespace PeliculasApi.Entidades
         [PrimeraLetraMayuscula] // Validaciones Personalizas por atributos las validaciones se encuentran en la carpeta Validaciones
         public required string Nombre { get; set; }
 
-
-
-
-
         /* Validaciones de prueba
         [Range(18, 120, ErrorMessage ="La edad mínima del campo {0} es {1}")]
 

@@ -1,6 +1,4 @@
 using PeliculasApi;
-using PeliculasApi.Interfaz;
-using PeliculasApi.Repositorios;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,22 +24,6 @@ builder.Services.AddOutputCache(opciones => {
    RepositorioEnMemoria: Es la implementacion de ese servicio
  */
 
-builder.Services.AddSingleton<IRepositorio, RepositorioEnMemoria>();
-
-/* Ejemplo de los 3 tipos de servicios disponible en C# */
-
-// Servicio Transient o servicio transitorio
-builder.Services.AddTransient<ServicioTransient>();
-
-// Servicio Scope o Servicio de alcanse
-
-builder.Services.AddScoped<ServicioScope>();
-
-// Servicio Singleton o Solitario
-
-builder.Services.AddSingleton<ServicioSingleton>();
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -53,6 +35,12 @@ if (app.Environment.IsDevelopment())
 
     
 }
+
+/* Ejecutando Swagger en ambiente de produccion
+app.UseSwagger();
+app.UseSwaggerUI();
+
+*/
 
 app.UseHttpsRedirection();
 
