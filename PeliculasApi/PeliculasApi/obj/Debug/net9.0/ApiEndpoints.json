@@ -121,6 +121,26 @@
   },
   {
     "ContainingType": "PeliculasApi.Controllers.GenerosController",
+    "Method": "GetEjemploProveedorConfiguracion",
+    "RelativePath": "api/generos/Ejemplo-proveedor-configuraci\u00F3n",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.GenerosController",
     "Method": "Get",
     "RelativePath": "api/generos/Listado",
     "HttpMethod": "GET",

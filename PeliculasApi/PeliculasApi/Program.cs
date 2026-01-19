@@ -45,6 +45,7 @@ builder.Services.AddSingleton<ServicioSingleton>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+/* Esto es si queremos usar swagger en modo desarrollo como ves esta condiciona que se ejecute solo es modo de desarrollo
 if (app.Environment.IsDevelopment())
 {
     //app.MapOpenApi();
@@ -52,6 +53,26 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 
     
+}
+*/
+
+/* De esta forma desplegamos swagger a produccion 
+    app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
+*/
+
+// De esta forma lo ponemos en modo de produccion
+//app.UseSwagger();
+//app.UseSwaggerUI();
+
+/* Ahora ponemos swagger en modo desarrollo otra vez */
+
+if (app.Environment.IsDevelopment())
+{
+    //app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
