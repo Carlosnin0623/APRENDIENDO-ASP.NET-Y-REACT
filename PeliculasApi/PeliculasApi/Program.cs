@@ -11,6 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configurando servicio de AutoMapper
+
+builder.Services.AddAutoMapper(typeof(Program));
 
 // Servicio para la conexion con la base de datos 
 

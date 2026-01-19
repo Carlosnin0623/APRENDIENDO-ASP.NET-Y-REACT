@@ -9,7 +9,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[PeliculasApi.Entidades.Genero, PeliculasApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[PeliculasApi.DTOs.GeneroDTO, PeliculasApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -28,8 +28,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "genero",
-        "Type": "PeliculasApi.Entidades.Genero",
+        "Name": "generoCreacionDTO",
+        "Type": "PeliculasApi.DTOs.GeneroCreacionDTO",
         "IsRequired": true
       }
     ],
@@ -83,7 +83,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "PeliculasApi.Entidades.Genero",
+        "Type": "PeliculasApi.DTOs.GeneroDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

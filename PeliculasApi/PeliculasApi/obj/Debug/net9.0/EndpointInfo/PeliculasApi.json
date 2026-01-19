@@ -18,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Genero"
+                    "$ref": "#/components/schemas/GeneroDTO"
                   }
                 }
               },
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Genero"
+                    "$ref": "#/components/schemas/GeneroDTO"
                   }
                 }
               },
@@ -34,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Genero"
+                    "$ref": "#/components/schemas/GeneroDTO"
                   }
                 }
               }
@@ -50,17 +50,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Genero"
+                "$ref": "#/components/schemas/GeneroCreacionDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Genero"
+                "$ref": "#/components/schemas/GeneroCreacionDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Genero"
+                "$ref": "#/components/schemas/GeneroCreacionDTO"
               }
             }
           }
@@ -115,17 +115,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Genero"
+                  "$ref": "#/components/schemas/GeneroDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Genero"
+                  "$ref": "#/components/schemas/GeneroDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Genero"
+                  "$ref": "#/components/schemas/GeneroDTO"
                 }
               }
             }
@@ -136,7 +136,21 @@
   },
   "components": {
     "schemas": {
-      "Genero": {
+      "GeneroCreacionDTO": {
+        "required": [
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GeneroDTO": {
         "required": [
           "nombre"
         ],
@@ -147,9 +161,8 @@
             "format": "int32"
           },
           "nombre": {
-            "maxLength": 15,
-            "minLength": 0,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
