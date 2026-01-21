@@ -1,6 +1,5 @@
+using Microsoft.EntityFrameworkCore;
 using PeliculasApi;
-using PeliculasApi.Interfaz;
-using PeliculasApi.Repositorios;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +11,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configurando servicio de AutoMapper
+
+builder.Services.AddAutoMapper(typeof(Program));
+
+// Servicio para la conexion con la base de datos 
+
+builder.Services.AddDbContext<ApplicationDbContext>(opciones => 
+opciones.UseSqlServer("name=DefaultConnection"));
+
 /* Implementar Cache en la aplicación para guardar datos en memoria y retorne mas rapido la info AddOutputCache
    Esto siempre debe ir antes de app que es lo que inicializa el api  */
 
@@ -21,25 +29,16 @@ builder.Services.AddOutputCache(opciones => {
      opciones.DefaultExpirationTimeSpan = TimeSpan.FromSeconds(60); 
   });
 
-/* Configurando servicio IRepostorio para aplicar la inversion de Dependencia 
-   IRepositorio: Es es servicio
-   RepositorioEnMemoria: Es la implementacion de ese servicio
- */
+var origenesPermitidos = builder.Configuration.GetValue<string>("origenesPermitidos")!.Split(",");
 
-builder.Services.AddSingleton<IRepositorio, RepositorioEnMemoria>();
-
-/* Ejemplo de los 3 tipos de servicios disponible en C# */
-
-// Servicio Transient o servicio transitorio
-builder.Services.AddTransient<ServicioTransient>();
-
-// Servicio Scope o Servicio de alcanse
-
-builder.Services.AddScoped<ServicioScope>();
-
-// Servicio Singleton o Solitario
-
-builder.Services.AddSingleton<ServicioSingleton>();
+ // Los Cors son los que me permiten la conexion desde el navegador hacia mi servidor web
+builder.Services.AddCors(opciones =>
+{
+    opciones.AddDefaultPolicy(opcionesCors =>
+    {
+        opcionesCors.WithOrigins(origenesPermitidos).AllowAnyMethod().AllowAnyHeader();
+    });
+});
 
 
 var app = builder.Build();
@@ -75,12 +74,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+/* Ejecutando Swagger en ambiente de produccion
+app.UseSwagger();
+app.UseSwaggerUI();
+
+*/
+
 app.UseHttpsRedirection();
 
-app.UseOutputCache();  // El app.UseOutputCache(): Sirve para agregar cache a la aplicacion y debe ir antes del app.UseAuthorization();  //
+app.UseCors();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseOutputCache();  // El app.UseOutputCache(): Sirve para agregar cache a la aplicacion y debe ir antes del app.UseAuthorization();  //
 
 app.Run();
