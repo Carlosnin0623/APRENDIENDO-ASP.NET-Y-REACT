@@ -8,7 +8,7 @@ namespace PeliculasApi.Migrations
     public partial class TablaGeneros : Migration
     {
         /// <inheritdoc />
-        protected override void Up(MigrationBuilder migrationBuilder)
+        protected override void Up(MigrationBuilder migrationBuilder)  // En el metodo Up Se actualizara a medida que vayamos actualizando la base de datos
         {
             migrationBuilder.CreateTable(
                 name: "Generos",
@@ -25,7 +25,7 @@ namespace PeliculasApi.Migrations
         }
 
         /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
+        protected override void Down(MigrationBuilder migrationBuilder) // El metodo Down va a desaser todos los cambios que estan en Up
         {
             migrationBuilder.DropTable(
                 name: "Generos");

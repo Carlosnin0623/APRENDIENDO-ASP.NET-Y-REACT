@@ -5,6 +5,8 @@ namespace PeliculasApi.DTOs
 {
     public class GeneroCreacionDTO
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(15, ErrorMessage = "El campo {0} debe tener {1} caracteres o menos ")]
         [PrimeraLetraMayuscula] // Validaciones Personalizas por atributos las validaciones se encuentran en la carpeta Validaciones

@@ -11,7 +11,7 @@ using PeliculasApi;
 namespace PeliculasApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260119181438_TablaGeneros")]
+    [Migration("20260121145633_TablaGeneros")]
     partial class TablaGeneros
     {
         /// <inheritdoc />
