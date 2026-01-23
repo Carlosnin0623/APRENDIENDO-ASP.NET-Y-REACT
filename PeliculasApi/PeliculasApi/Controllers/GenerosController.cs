@@ -35,8 +35,14 @@ namespace PeliculasApi.Controllers
         [OutputCache(Tags = [cacheTag])] // Con esto ya le estamos agregando Cache a una de las peticiones https
         public async Task<List<GeneroDTO>> Get([FromQuery] PaginacionDTO paginacion) // Recibir datos o mostrar
         {
-            await HttpContext.InsertarParametrosPaginacionEnCabezera()
-            return await context.Generos.ProjectTo<GeneroDTO>(mapper.ConfigurationProvider).ToListAsync();
+            // Esto es para paginar los registros de la tabla generos //
+            var queryable = context.Generos;
+            await HttpContext.InsertarParametrosPaginacionEnCabezera(queryable);
+            return await queryable
+                .OrderBy(g => g.Nombre) // Para ordenar ascendentemente
+               //.OrderByDescending(g => g.Id) // Para ordenar decendientemente
+                .Paginar(paginacion)
+                .ProjectTo<GeneroDTO>(mapper.ConfigurationProvider).ToListAsync();
         }
 
         /* [HttpGet("{id}/{nombre?}")] /* El simboolo ? significa que el nombre es opcional y no siempre debe estar presente */

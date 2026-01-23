@@ -37,7 +37,8 @@ builder.Services.AddCors(opciones =>
     opciones.AddDefaultPolicy(opcionesCors =>
     {
         // Esta opcion WithOrigins(Direcciones permitidas) permite decidir que ip o direccion puede conectarse a nuestro web Api
-        opcionesCors.WithOrigins(origenesPermitidos).AllowAnyMethod().AllowAnyHeader();
+        opcionesCors.WithOrigins(origenesPermitidos).AllowAnyMethod().AllowAnyHeader()
+        .WithExposedHeaders("cantidad-total-registros");
 
         /* Esta opcion AllowAnyOrigin() permite todo el mundo pueda acceder a nuestro web api
           opcionesCors.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
