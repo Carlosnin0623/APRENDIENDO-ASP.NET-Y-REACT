@@ -1,62 +1,71 @@
 import { useNavigate } from "react-router";
 import Boton from "../../../componentesGlobales/Boton";
-import { useEffect, useState } from "react";
-import clienteAPI from "../../../api/clienteAxios";
-import type Genero from "../modelos/Genero.model";
 import ListadoGenerico from "../../../componentesGlobales/ListadoGenerico";
+import Paginacion from "../../../componentesGlobales/Paginacion";
+import Cargando from "../../../componentesGlobales/Cargando";
+import { useGeneros } from "../hooks/useGeneros";
 
 export default function IndiceGeneros() {
-
-
     const navigate = useNavigate();
 
-    const [generos, setGeneros] = useState<Genero[]>();
-
-
-    useEffect(() => {
-        clienteAPI.get<Genero[]>('/generos')
-            .then(res => setGeneros(res.data))
-    }, [])
-
+    const {cargando, pagina, recordsPorPagina, cantidadTotalRegistros, setPagina, setRecordsPorPagina, generos} = useGeneros();
+    
     return (
         <>
             <h3>Géneros</h3>
             <div>
-               <Boton onClick={() => navigate('/generos/crear')}>Crear Género</Boton>
+                <Boton onClick={() => navigate('/generos/crear')}>Crear Género</Boton>
             </div>
-        
-            <ListadoGenerico listado={generos}>
-                <table className="table table-hover align-middle shadow-sm border rounded overflow-hidden">
-                    <thead>
-                        <tr>
-                            <th scope="col">
-                                Nombre
-                            </th>
 
-                            <th scope="col" className="text-end">
-                                Acciónes
-                            </th>
-                        </tr>
-                    </thead>
+            {cargando ? (
+                <Cargando />
+            ) : (
+                <div className="mt-4">
+                    <div className="mb-2">
+                        <Paginacion
+                            paginaActual={pagina}
+                            registrosPorPagina={recordsPorPagina}
+                            cantidadTotalRgistros={cantidadTotalRegistros}
+                            registroPorPaginaOpciones={[5, 10, 50]}
+                            onCambioPaginacion={(nuevaPagina, nuevosRecords) => {
+                                setPagina(nuevaPagina);
+                                setRecordsPorPagina(nuevosRecords);
+                            }}
+                        />
+                    </div>
 
-                    <tbody>
-                        {generos?.map(genero =>
-                            <tr key={genero.id}>
-                                <td>{genero.nombre}</td>
-                                <td className="text-end">
-                                    <Boton 
-                                    onClick={() => navigate(`/generos/editar/${genero.id}`)}
-                                    className="btn btn-sm btn-outline-primary me-2">
-                                        <i className="bi bi-pencil me-1"></i> Editar</Boton>
+                    <ListadoGenerico listado={generos}>
+                        <table className="table table-hover align-middle shadow-sm border rounded overflow-hidden">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col" className="text-end">Acciones</th>
+                                </tr>
+                            </thead>
 
-                                    <Boton className="btn btn-sm btn-outline-danger me-2">
-                                        <i className="bi bi-trash me-1"></i> Borrar</Boton>
-                                </td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-            </ListadoGenerico>
+                            <tbody>
+                                {generos?.map((genero) => (
+                                    <tr key={genero.id}>
+                                        <td>{genero.nombre}</td>
+                                        <td className="text-end">
+                                            <Boton
+                                                onClick={() => navigate(`/generos/editar/${genero.id}`)}
+                                                className="btn btn-sm btn-outline-primary me-2"
+                                            >
+                                                <i className="bi bi-pencil me-1"></i> Editar
+                                            </Boton>
+
+                                            <Boton className="btn btn-sm btn-outline-danger me-2">
+                                                <i className="bi bi-trash me-1"></i> Borrar
+                                            </Boton>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </ListadoGenerico>
+                </div>
+            )}
         </>
     )
 
