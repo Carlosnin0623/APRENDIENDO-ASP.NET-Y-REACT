@@ -1,5 +1,136 @@
 [
   {
+    "ContainingType": "PeliculasApi.Controllers.ActoresController",
+    "Method": "Get",
+    "RelativePath": "api/actores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "RecordsPorPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[PeliculasApi.DTOs.ActorDTO, PeliculasApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.ActoresController",
+    "Method": "Post",
+    "RelativePath": "api/actores",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FechaNacimiento",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Foto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.ActoresController",
+    "Method": "Get",
+    "RelativePath": "api/actores/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PeliculasApi.DTOs.ActorDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObtenerActorPorId"
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.ActoresController",
+    "Method": "Put",
+    "RelativePath": "api/actores/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FechaNacimiento",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "Foto",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.ActoresController",
+    "Method": "Delete",
+    "RelativePath": "api/actores/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PeliculasApi.Controllers.GenerosController",
     "Method": "Get",
     "RelativePath": "api/generos",
@@ -48,38 +179,6 @@
   },
   {
     "ContainingType": "PeliculasApi.Controllers.GenerosController",
-    "Method": "Put",
-    "RelativePath": "api/generos",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "PeliculasApi.Controllers.GenerosController",
-    "Method": "Delete",
-    "RelativePath": "api/generos",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "PeliculasApi.Controllers.GenerosController",
     "Method": "Get",
     "RelativePath": "api/generos/{id}",
     "HttpMethod": "GET",
@@ -94,7 +193,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "PeliculasApi.Entidades.Genero",
+        "Type": "PeliculasApi.DTOs.GeneroDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -104,5 +203,42 @@
       }
     ],
     "EndpointName": "ObtenerGeneroPorId"
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.GenerosController",
+    "Method": "Put",
+    "RelativePath": "api/generos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "generoCreacionDTO",
+        "Type": "PeliculasApi.DTOs.GeneroCreacionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.GenerosController",
+    "Method": "Delete",
+    "RelativePath": "api/generos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

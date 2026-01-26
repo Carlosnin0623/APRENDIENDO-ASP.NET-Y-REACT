@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using PeliculasApi.DTOs;
 using PeliculasApi.Entidades;
 using PeliculasApi.Utilidades;
+using System.Threading.Tasks;
 
 namespace PeliculasApi.Controllers
 
@@ -49,9 +50,18 @@ namespace PeliculasApi.Controllers
 
         [HttpGet("{id:int}", Name ="ObtenerGeneroPorId")]
         [OutputCache(Tags = [cacheTag] )] // Con esto ya le estamos agregando Cache a una de las peticiones http
-        public async Task<ActionResult<Genero>> Get(int id)  // api/generos/1
+        public async Task<ActionResult<GeneroDTO>> Get(int id)  // api/generos/1
         {
-           throw new NotImplementedException();
+            var genero = await context.Generos
+                .ProjectTo<GeneroDTO>(mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(g => g.Id == id);
+
+            if(genero is null)
+            {
+                return NotFound();
+            }
+
+            return genero;
         }
 
         [HttpPost]
@@ -60,20 +70,43 @@ namespace PeliculasApi.Controllers
            var genero = mapper.Map<Genero>(generoCreacionDTO);
            context.Add(genero);
            await context.SaveChangesAsync();
+           await outputCacheStore.EvictByTagAsync(cacheTag, default);
 
             return CreatedAtRoute("ObtenerGeneroPorId", new { id = genero.Id }, genero);
         }
 
-        [HttpPut]
-        public void Put() // Actualizar
+        [HttpPut("{id:int}")] // Actualizar
+        public async Task<IActionResult> Put(int id, [FromBody] GeneroCreacionDTO generoCreacionDTO) // Actualizar
         {
+            var generoExiste = await context.Generos.AnyAsync(g => g.Id == id);
 
+            if (!generoExiste)
+            {
+                 return NotFound();
+            }
+
+            var genero = mapper.Map<Genero>(generoCreacionDTO);
+            genero.Id = id;
+
+            context.Update(genero);
+            await context.SaveChangesAsync();
+            await outputCacheStore.EvictByTagAsync(cacheTag, default);
+
+            return NoContent();
         }
 
-        [HttpDelete]
-        public void Delete() // Eliminar
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id) // Eliminar
         {
+            var registrosBorrados = await context.Generos.Where(g => g.Id == id).ExecuteDeleteAsync();
 
+            if(registrosBorrados == 0)
+            {
+                return NotFound();
+            }
+
+            await outputCacheStore.EvictByTagAsync(cacheTag, default);
+            return NoContent();
         }
     }
 }

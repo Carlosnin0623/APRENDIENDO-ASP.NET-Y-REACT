@@ -1,19 +1,31 @@
 import type { SubmitHandler } from "react-hook-form";
 import FormularioActor from "./FormularioActor";
 import type ActorCreacion from "../modelos/ActorCreacion.model";
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import { extraerErrores } from "../../../utilidades/extraerErrores";
+import type { AxiosError } from "axios";
+import clienteAPI from "../../../api/clienteAxios";
 
 export default function CrearActores() {
 
+    const [errores, setErrores] = useState<string[]>([]);
+    const navigate = useNavigate();
+
     const onSubmit: SubmitHandler<ActorCreacion> = async (data) => {
-        console.log('Creando actores');
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        console.log(data);
+      try{
+         await clienteAPI.postForm('/actores', data);
+         navigate('/actores');
+      }catch(err){
+         const errores = extraerErrores(err as AxiosError);
+         setErrores(errores);
+      }
     }
 
     return (
         <>
             <h3>Crear Actores</h3>
-            <FormularioActor onSubmit={onSubmit} />
+            <FormularioActor errores={errores} onSubmit={onSubmit} />
         </>
 
     )

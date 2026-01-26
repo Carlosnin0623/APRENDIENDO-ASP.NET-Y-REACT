@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PeliculasApi;
+using PeliculasApi.Servicios;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,6 +48,10 @@ builder.Services.AddCors(opciones =>
 });
 
 
+builder.Services.AddTransient<IAlmacenadorArchivos, AlmacenadorArchivosLocal>();
+builder.Services.AddHttpContextAccessor();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -87,6 +92,8 @@ app.UseSwaggerUI();
 */
 
 app.UseHttpsRedirection();
+
+app.UseStaticFiles(); // Este servicio permite archivos estaticos como carpetas para guardar imagenes en nuestro disco
 
 app.UseCors();  // El servicio app.UseCors() es el que permite la conexion desde el servidor de react con el de Asp.net
 

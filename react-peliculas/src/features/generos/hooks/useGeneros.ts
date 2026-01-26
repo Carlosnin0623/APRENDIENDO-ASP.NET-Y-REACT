@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import clienteAPI from "../../../api/clienteAxios";
 import type Genero from "../modelos/Genero.model";
 
@@ -10,7 +10,8 @@ export function useGeneros() {
     const [recordsPorPagina, setRecordsPorPagina] = useState(5);
     const [cargando, setCargando] = useState(true);
 
-    useEffect(() => {
+    const cargarRegistros = useCallback(() => {
+
         clienteAPI.get<Genero[]>(`/generos`, {
             params: { pagina, recordsPorPagina }
         }).then(res => {
@@ -19,9 +20,13 @@ export function useGeneros() {
             setGeneros(res.data);
             setCargando(false);
         })
-    }, [pagina, recordsPorPagina]);
+    }, [pagina, recordsPorPagina])
+
+    useEffect(() => {
+        cargarRegistros()
+    }, [cargarRegistros]);
 
 
-    return {cargando, pagina, recordsPorPagina, cantidadTotalRegistros, setPagina, setRecordsPorPagina, generos}
+    return { cargando, pagina, recordsPorPagina, cantidadTotalRegistros, setPagina, setRecordsPorPagina, generos, cargarRegistros}
 
 }
