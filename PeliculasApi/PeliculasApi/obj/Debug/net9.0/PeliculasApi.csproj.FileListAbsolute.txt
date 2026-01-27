@@ -354,3 +354,4 @@ C:\Users\Carlos Alberto Nin\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\Pel
 C:\Users\Carlos Alberto Nin\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Carlos Alberto Nin\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Carlos Alberto Nin\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bin\Debug\net9.0\PeliculasApi.staticwebassets.runtime.json
+C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bin\Debug\net9.0\PeliculasApi.staticwebassets.runtime.json

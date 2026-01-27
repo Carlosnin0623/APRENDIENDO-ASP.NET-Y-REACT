@@ -14,7 +14,7 @@ namespace PeliculasApi.Controllers
     [Route("api/generos")]
     [ApiController]
 
-    public class GenerosController : ControllerBase
+    public class GenerosController : CustomBaseController
     {
         private readonly IOutputCacheStore outputCacheStore;
         private readonly ApplicationDbContext context;
@@ -25,6 +25,7 @@ namespace PeliculasApi.Controllers
             IOutputCacheStore outputCacheStore,
             ApplicationDbContext context, 
             IMapper mapper)
+            :base(context, mapper)
         {
            
             this.outputCacheStore = outputCacheStore;
@@ -37,13 +38,7 @@ namespace PeliculasApi.Controllers
         public async Task<List<GeneroDTO>> Get([FromQuery] PaginacionDTO paginacion) // Recibir datos o mostrar
         {
             // Esto es para paginar los registros de la tabla generos //
-            var queryable = context.Generos;
-            await HttpContext.InsertarParametrosPaginacionEnCabezera(queryable);
-            return await queryable
-                .OrderBy(g => g.Nombre) // Para ordenar ascendentemente
-               //.OrderByDescending(g => g.Id) // Para ordenar decendientemente
-                .Paginar(paginacion)
-                .ProjectTo<GeneroDTO>(mapper.ConfigurationProvider).ToListAsync();
+            return await Get<Genero, GeneroDTO>(paginacion, ordenarPor: g => g.Nombre);
         }
 
         /* [HttpGet("{id}/{nombre?}")] /* El simboolo ? significa que el nombre es opcional y no siempre debe estar presente */
