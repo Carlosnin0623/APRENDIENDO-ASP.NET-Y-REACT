@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PeliculasApi.DTOs;
+using PeliculasApi.Entidades;
 using PeliculasApi.Utilidades;
 using System.Linq.Expressions;
 
@@ -29,6 +30,22 @@ namespace PeliculasApi.Controllers
                .Paginar(paginacion)
                .ProjectTo<TDTO>(mapper.ConfigurationProvider).ToListAsync();
 
+        }
+
+        protected async Task<ActionResult<TDTO>> Get<TEntidad, TDTO>(int id)
+            where TEntidad: class, IId  // Restricction para especificar que TEntidad debe ser un clase
+            where TDTO : IId
+        {
+            var entidad = await context.Set<TEntidad>()
+                .ProjectTo<TDTO>(mapper.ConfigurationProvider)
+                .FirstOrDefaultAsync(x => x.Id  == id);
+
+            if(entidad is null)
+            {
+                return NotFound();
+            }
+
+            return entidad;
         }
     }
 }

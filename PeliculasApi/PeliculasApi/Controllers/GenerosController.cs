@@ -47,16 +47,7 @@ namespace PeliculasApi.Controllers
         [OutputCache(Tags = [cacheTag] )] // Con esto ya le estamos agregando Cache a una de las peticiones http
         public async Task<ActionResult<GeneroDTO>> Get(int id)  // api/generos/1
         {
-            var genero = await context.Generos
-                .ProjectTo<GeneroDTO>(mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(g => g.Id == id);
-
-            if(genero is null)
-            {
-                return NotFound();
-            }
-
-            return genero;
+            return await Get<Genero, GeneroDTO>(id);
         }
 
         [HttpPost]
