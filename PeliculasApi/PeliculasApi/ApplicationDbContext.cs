@@ -14,6 +14,8 @@ namespace PeliculasApi
         public DbSet<Genero> Generos { get; set; } // Esta es la forma de crear la tabla y esta toma la estructura de la entidad Genero
 
         public DbSet<Actor> Actores { get; set; }
+
+        public DbSet<Cine> Cines { get; set; }
     }
 
     /* Pasos para crear una base de datos usando Entity FrameCore 

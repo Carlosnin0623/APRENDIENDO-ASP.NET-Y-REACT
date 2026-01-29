@@ -24,7 +24,7 @@ namespace PeliculasApi.Controllers
 
         public ActoresController(ApplicationDbContext context, IMapper mapper, IOutputCacheStore outputCacheStore,
             IAlmacenadorArchivos almacenadorArchivos)
-            :base(context, mapper)
+            :base(context, mapper, outputCacheStore, cacheTag)
         {
             this.context = context;
             this.mapper = mapper;
@@ -63,7 +63,9 @@ namespace PeliculasApi.Controllers
             await context.SaveChangesAsync();
             await outputCacheStore.EvictByTagAsync(cacheTag, default);
 
-            return CreatedAtRoute("ObtenerActorPorId", new { id = actor.Id }, actor);
+            var actorDTO = mapper.Map<ActorDTO>(actor);
+
+            return CreatedAtRoute("ObtenerActorPorId", new { id = actor.Id }, actorDTO);
 
         }
 
@@ -95,15 +97,7 @@ namespace PeliculasApi.Controllers
 
         public async Task <IActionResult> Delete(int id)
         {
-            var registrosBorrados = await context.Actores.Where(a => a.Id == id).ExecuteDeleteAsync();
-
-            if(registrosBorrados == 0)
-            {
-                return NotFound();
-            }
-
-            await outputCacheStore.EvictByTagAsync(cacheTag,default);
-            return NoContent();
+            return await Delete<Actor>(id);
         }
 
     }

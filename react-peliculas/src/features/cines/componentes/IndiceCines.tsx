@@ -1,15 +1,39 @@
-import { useNavigate } from "react-router";
-import Boton from "../../../componentesGlobales/Boton";
+import { useEntidades } from "../../../hooks/useEntidades";
+import type Cine from "../modelos/Cine.model";
+import IndiceEntidades from "../../../componentesGlobales/IndiceEntidades";
+
 
 export default function IndiceCines(){
 
-     const navigate = useNavigate();
-    return(
-        <>
-        <h3>Cines</h3>
-        <Boton onClick={() => navigate('/cines/crear')}>Crear Cine</Boton>
-        </>
-        
-    )
+    const entidadesHook = useEntidades<Cine>('/cines');
+    
+     return (
+             <>
+                 <IndiceEntidades<Cine>
+                     titulo="Cines" nombreEntidad="Cine" url="/cines"
+                      urlCrear="/cines/crear" {...entidadesHook}
+                     >
+                     {(cines, botones) => <>
+                         <thead>
+                             <tr>
+                                 <th scope="col">Nombre</th>
+                                 <th scope="col" className="text-end">Acciones</th>
+                             </tr>
+                         </thead>
+     
+                         <tbody>
+                             {cines?.map((cine) => (
+                                 <tr key={cine.id}>
+                                     <td>{cine.nombre}</td>
+                                     <td className="text-end">
+                                         {botones(`/cines/editar/${cine.id}`, cine.id)}
+                                     </td>
+                                 </tr>
+                             ))}
+                         </tbody>
+                     </>}
+                 </IndiceEntidades>
+             </>
+         )
 
 }

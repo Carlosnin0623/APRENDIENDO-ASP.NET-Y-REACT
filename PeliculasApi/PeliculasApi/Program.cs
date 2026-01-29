@@ -1,6 +1,10 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using NetTopologySuite;
+using NetTopologySuite.Geometries;
 using PeliculasApi;
 using PeliculasApi.Servicios;
+using PeliculasApi.Utilidades;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,12 +18,23 @@ builder.Services.AddSwaggerGen();
 
 // Configurando servicio de AutoMapper
 
-builder.Services.AddAutoMapper(typeof(Program));
+//builder.Services.AddAutoMapper(typeof(Program));
+
+ // Configurando servicio de AutoMapper para campos que llevan coordenadas
+builder.Services.AddSingleton(proveedor => new MapperConfiguration(configuracion =>
+{
+    var geometryFactory = proveedor.GetRequiredService<GeometryFactory>();
+    configuracion.AddProfile(new AutoMapperProfiles(geometryFactory));
+}).CreateMapper());
 
 // Servicio para la conexion con la base de datos 
 
 builder.Services.AddDbContext<ApplicationDbContext>(opciones => 
-opciones.UseSqlServer("name=DefaultConnection"));
+opciones.UseSqlServer("name=DefaultConnection", sqlserver => 
+sqlserver.UseNetTopologySuite())); // Esto es para manejar el tipo de dato point para las ubicaciones en el mapa //
+
+//GeometryFactory: Es un servicio para trabajar con coordenadas geograficas de la tierra
+builder.Services.AddSingleton<GeometryFactory>(NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326));
 
 /* Implementar Cache en la aplicación para guardar datos en memoria y retorne mas rapido la info AddOutputCache
    Esto siempre debe ir antes de app que es lo que inicializa el api  */

@@ -131,6 +131,117 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PeliculasApi.Controllers.CinesController",
+    "Method": "Get",
+    "RelativePath": "api/cines",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Pagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "RecordsPorPagina",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[PeliculasApi.DTOs.CineDTO, PeliculasApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.CinesController",
+    "Method": "Post",
+    "RelativePath": "api/cines",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cineCreacionDTO",
+        "Type": "PeliculasApi.DTOs.CineCreacionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.CinesController",
+    "Method": "Get",
+    "RelativePath": "api/cines/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PeliculasApi.DTOs.CineDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "ObtenerCinePorId"
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.CinesController",
+    "Method": "Put",
+    "RelativePath": "api/cines/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cineCreacionDTO",
+        "Type": "PeliculasApi.DTOs.CineCreacionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.CinesController",
+    "Method": "Delete",
+    "RelativePath": "api/cines/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PeliculasApi.Controllers.GenerosController",
     "Method": "Get",
     "RelativePath": "api/generos",
