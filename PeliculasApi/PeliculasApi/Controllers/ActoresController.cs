@@ -48,6 +48,15 @@ namespace PeliculasApi.Controllers
             return await Get<Actor, ActorDTO>(id);
         }
 
+        [HttpGet("{nombre}")]
+        public async Task<List<PeliculaActorDTO>> Get(string nombre)
+        {
+            return await context.Actores.Where(a => a.Nombre.Contains(nombre))
+                .ProjectTo<PeliculaActorDTO>(mapper.ConfigurationProvider)
+                .ToListAsync();
+
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromForm] ActorCreacionDTO actorCreacionDTO)  //En este caso usamos FromForm ya que vamos a recibir un archivo o imagen si no vamos a recibir archivo, entonces debemos usar formBody en el post
         {

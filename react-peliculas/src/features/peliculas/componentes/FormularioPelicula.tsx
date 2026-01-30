@@ -13,6 +13,7 @@ import { useState } from "react";
 import type Cine from "../../cines/modelos/Cine.model";
 import TypeaheadActores from "./TypeaheadActores";
 import type ActorPelicula from "../modelos/ActorPelicula.model";
+import MostrarErrores from "../../../componentesGlobales/MostrarErrores";
 
 export default function FormularioPelicula(props: FormularioPeliculaProps) {
 
@@ -56,6 +57,7 @@ export default function FormularioPelicula(props: FormularioPeliculaProps) {
 
     return (
         <>
+           <MostrarErrores errores={props.errores} />
             <form onSubmit={handleSubmit(onSubmit)}>
 
                 <div className="form-group">
@@ -145,7 +147,8 @@ interface FormularioPeliculaProps {
     generosNoSeleccionados: Genero[];
     cinesSeleccionados: Cine[];
     cinesNoSeleccionados: Cine[];
-    actoresSeleccionados: ActorPelicula[]
+    actoresSeleccionados: ActorPelicula[];
+    errores: string[];
 }
 
 const reglasDeValidacion = yup.object({

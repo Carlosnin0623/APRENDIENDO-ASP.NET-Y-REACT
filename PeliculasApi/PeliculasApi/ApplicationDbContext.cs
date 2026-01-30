@@ -11,11 +11,24 @@ namespace PeliculasApi
             
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<PeliculaGenero>().HasKey(e => new { e.GeneroId, e.PeliculaId });
+            modelBuilder.Entity<PeliculaCine>().HasKey(e => new { e.CineId, e.PeliculaId });
+            modelBuilder.Entity<PeliculaActor>().HasKey(e => new { e.ActorId, e.PeliculaId });
+        }
+
         public DbSet<Genero> Generos { get; set; } // Esta es la forma de crear la tabla y esta toma la estructura de la entidad Genero
-
         public DbSet<Actor> Actores { get; set; }
-
         public DbSet<Cine> Cines { get; set; }
+        public DbSet<Pelicula> Peliculas { get; set; }
+        public DbSet<PeliculaGenero> PeliculasGeneros { get;set; }
+        public DbSet<PeliculaCine> PeliculasCine { get; set; }
+        public DbSet<PeliculaActor> PeliculasActores { get; set; }
+
+
     }
 
     /* Pasos para crear una base de datos usando Entity FrameCore 
