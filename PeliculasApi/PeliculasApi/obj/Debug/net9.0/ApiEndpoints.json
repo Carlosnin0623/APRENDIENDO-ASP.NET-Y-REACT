@@ -434,12 +434,42 @@
     "Parameters": [
       {
         "Name": "id",
-        "Type": "System.String",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [],
+    "ReturnTypes": [
+      {
+        "Type": "PeliculasApi.DTOs.PeliculasDetallesDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
     "EndpointName": "ObtenerPeliculaPorId"
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.PeliculasController",
+    "Method": "Get",
+    "RelativePath": "api/peliculas/landing",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "PeliculasApi.DTOs.LandingPageDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "PeliculasApi.Controllers.PeliculasController",

@@ -652,6 +652,35 @@
         }
       }
     },
+    "/api/peliculas/landing": {
+      "get": {
+        "tags": [
+          "Peliculas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LandingPageDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LandingPageDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LandingPageDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/peliculas/{id}": {
       "get": {
         "tags": [
@@ -664,13 +693,31 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeliculasDetallesDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeliculasDetallesDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeliculasDetallesDTO"
+                }
+              }
+            }
           }
         }
       }
@@ -921,6 +968,26 @@
         },
         "additionalProperties": false
       },
+      "LandingPageDTO": {
+        "type": "object",
+        "properties": {
+          "enCines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PeliculaDTO"
+            },
+            "nullable": true
+          },
+          "proximosEstrenos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PeliculaDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PeliculaActorDTO": {
         "type": "object",
         "properties": {
@@ -943,6 +1010,35 @@
         },
         "additionalProperties": false
       },
+      "PeliculaDTO": {
+        "required": [
+          "titulo"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "titulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "trailer": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaLanzamiento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "poster": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PeliculaPostGetDTO": {
         "type": "object",
         "properties": {
@@ -957,6 +1053,56 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CineDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PeliculasDetallesDTO": {
+        "required": [
+          "titulo"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "titulo": {
+            "type": "string",
+            "nullable": true
+          },
+          "trailer": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaLanzamiento": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "poster": {
+            "type": "string",
+            "nullable": true
+          },
+          "generos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeneroDTO"
+            },
+            "nullable": true
+          },
+          "cines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CineDTO"
+            },
+            "nullable": true
+          },
+          "actores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PeliculaActorDTO"
             },
             "nullable": true
           }

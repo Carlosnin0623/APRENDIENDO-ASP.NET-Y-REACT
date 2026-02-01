@@ -12,6 +12,7 @@ namespace PeliculasApi.Utilidades
             ConfigurarMapeosGeneros();
             ConfigurarMapeosActores();
             ConfigurarMapeosCines(geometryFactory);
+            ConfigurarMapeoPeliculas();
         }
 
         private void ConfigurarMapeosGeneros()
@@ -44,16 +45,36 @@ namespace PeliculasApi.Utilidades
         private void ConfigurarMapeoPeliculas()
         {
             CreateMap<PeliculaCreacionDTO, Pelicula>()
-                .ForMember(x => x.Poster, opciones => opciones.Ignore())
-                .ForMember(x => x.PeliculasGeneros, dto =>
-                dto.MapFrom(p => p.GenerosIds!.Select(id => new PeliculaGenero { GeneroId = id })))
-                .ForMember(x => x.PeliculasCines, dto =>
-                dto.MapFrom(p => p.CinesIds!.Select(id => new PeliculaCine { PeliculaId = id })))
-                .ForMember(x => x.PeliculasActores, dto =>
-                dto.MapFrom(p => p.Actores!.Select(actor =>
-                new PeliculaActor { ActorId = actor.Id, Personaje = actor.Personaje })));
+            .ForMember(x => x.Poster, opciones => opciones.Ignore())
+            .ForMember(x => x.PeliculasGeneros, dto =>
+             dto.MapFrom(p => p.GenerosIds!.Select(id => new PeliculaGenero { GeneroId = id })))
+            .ForMember(x => x.PeliculasCines, dto =>
+             dto.MapFrom(p => p.CinesIds!.Select(id => new PeliculaCine { CineId = id }))) 
+            .ForMember(x => x.PeliculasActores, dto =>
+             dto.MapFrom(p => p.Actores!.Select(actor =>
+             new PeliculaActor { ActorId = actor.Id, Personaje = actor.Personaje })));
 
             CreateMap<Pelicula, PeliculaDTO>();
+            CreateMap<Pelicula, PeliculasDetallesDTO>()
+                .ForMember(p => p.Generos, entidad => entidad.MapFrom(p => p.PeliculasGeneros))
+                .ForMember(p => p.Cines, entidad => entidad.MapFrom(p => p.PeliculasCines))
+                .ForMember(p => p.Actores, entidad => entidad.MapFrom(p => p.PeliculasActores.OrderBy(o => o.Orden)));
+
+            CreateMap<PeliculaGenero, GeneroDTO>()
+                .ForMember(g => g.Id, pg => pg.MapFrom(p => p.GeneroId))
+                .ForMember(g => g.Nombre, pg => pg.MapFrom(p => p.Genero.Nombre));
+
+            CreateMap<PeliculaCine, CineDTO>()
+                .ForMember(g => g.Id, pc => pc.MapFrom(p => p.CineId))
+                .ForMember(g => g.Nombre, pc => pc.MapFrom(p => p.Cine.Nombre))
+                .ForMember(g => g.Latitud, pc => pc.MapFrom(p => p.Cine.Ubicacion.Y))
+                .ForMember(g => g.Longitud, pc => pc.MapFrom(p => p.Cine.Ubicacion.X));
+
+            CreateMap<PeliculaActor, PeliculaActorDTO>()
+                .ForMember(dto => dto.Id, entidad => entidad.MapFrom(p => p.ActorId))
+                .ForMember(dto => dto.Nombre, entidad => entidad.MapFrom(p => p.Actor.Nombre))
+                .ForMember(dto => dto.Foto, entidad => entidad.MapFrom(p => p.Actor.Foto));
+
         }
     }
 }

@@ -359,3 +359,7 @@ C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bi
 C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bin\Debug\net9.0\NetTopologySuite.dll
 C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bin\Debug\net9.0\NetTopologySuite.IO.SqlServerBytes.dll
 C:\Users\Loteka\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\obj\Debug\net9.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\Carlos Alberto Nin\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+C:\Users\Carlos Alberto Nin\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bin\Debug\net9.0\NetTopologySuite.dll
+C:\Users\Carlos Alberto Nin\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\bin\Debug\net9.0\NetTopologySuite.IO.SqlServerBytes.dll
+C:\Users\Carlos Alberto Nin\Desktop\APRENDIENDO-ASP.NET-Y-REACT\PeliculasApi\PeliculasApi\obj\Debug\net9.0\EFCoreSqlServerNetTopologySuite.cs
