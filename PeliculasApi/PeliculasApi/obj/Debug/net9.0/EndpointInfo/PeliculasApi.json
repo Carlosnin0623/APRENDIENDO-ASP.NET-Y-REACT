@@ -704,17 +704,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PeliculasDetallesDTO"
+                  "$ref": "#/components/schemas/PeliculaDetallesDTO"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PeliculasDetallesDTO"
+                  "$ref": "#/components/schemas/PeliculaDetallesDTO"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PeliculasDetallesDTO"
+                  "$ref": "#/components/schemas/PeliculaDetallesDTO"
                 }
               }
             }
@@ -837,6 +837,46 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/peliculas/PutGet/{id}": {
+      "get": {
+        "tags": [
+          "Peliculas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeliculasPutGetDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeliculasPutGetDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeliculasPutGetDTO"
+                }
+              }
+            }
           }
         }
       }
@@ -1039,27 +1079,7 @@
         },
         "additionalProperties": false
       },
-      "PeliculaPostGetDTO": {
-        "type": "object",
-        "properties": {
-          "generos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeneroDTO"
-            },
-            "nullable": true
-          },
-          "cines": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CineDTO"
-            },
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "PeliculasDetallesDTO": {
+      "PeliculaDetallesDTO": {
         "required": [
           "titulo"
         ],
@@ -1093,6 +1113,70 @@
             "nullable": true
           },
           "cines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CineDTO"
+            },
+            "nullable": true
+          },
+          "actores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PeliculaActorDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PeliculaPostGetDTO": {
+        "type": "object",
+        "properties": {
+          "generos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeneroDTO"
+            },
+            "nullable": true
+          },
+          "cines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CineDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PeliculasPutGetDTO": {
+        "type": "object",
+        "properties": {
+          "pelicula": {
+            "$ref": "#/components/schemas/PeliculaDTO"
+          },
+          "generosSeleccionados": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeneroDTO"
+            },
+            "nullable": true
+          },
+          "generosNoSeleccionados": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeneroDTO"
+            },
+            "nullable": true
+          },
+          "cinesSeleccionados": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CineDTO"
+            },
+            "nullable": true
+          },
+          "cinesNoSeleccionados": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/CineDTO"

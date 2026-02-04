@@ -55,7 +55,7 @@ namespace PeliculasApi.Utilidades
              new PeliculaActor { ActorId = actor.Id, Personaje = actor.Personaje })));
 
             CreateMap<Pelicula, PeliculaDTO>();
-            CreateMap<Pelicula, PeliculasDetallesDTO>()
+            CreateMap<Pelicula, PeliculaDetallesDTO>()
                 .ForMember(p => p.Generos, entidad => entidad.MapFrom(p => p.PeliculasGeneros))
                 .ForMember(p => p.Cines, entidad => entidad.MapFrom(p => p.PeliculasCines))
                 .ForMember(p => p.Actores, entidad => entidad.MapFrom(p => p.PeliculasActores.OrderBy(o => o.Orden)));

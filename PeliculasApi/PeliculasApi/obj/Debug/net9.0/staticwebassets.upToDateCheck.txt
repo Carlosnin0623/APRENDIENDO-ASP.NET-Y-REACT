@@ -7,3 +7,4 @@ wwwroot\actores\d122ecfd-2065-481c-8473-60c4c603e051.jpg
 wwwroot\peliculas\a89ef156-e3db-48aa-a609-77b299c0aab1.jpg
 wwwroot\peliculas\023f8609-074a-4df3-bdfb-e383d0757500.jpg
 wwwroot\peliculas\853764dc-c0d9-4119-ba4d-3997d3cde871.jpg
+wwwroot\peliculas\f6257097-4b9e-4019-b089-a97ce47f4b70.jpg

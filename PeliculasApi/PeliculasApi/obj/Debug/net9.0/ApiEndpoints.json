@@ -440,7 +440,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "PeliculasApi.DTOs.PeliculasDetallesDTO",
+        "Type": "PeliculasApi.DTOs.PeliculaDetallesDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -482,6 +482,32 @@
     "ReturnTypes": [
       {
         "Type": "PeliculasApi.DTOs.PeliculaPostGetDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PeliculasApi.Controllers.PeliculasController",
+    "Method": "PutGet",
+    "RelativePath": "api/peliculas/PutGet/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PeliculasApi.DTOs.PeliculasPutGetDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",

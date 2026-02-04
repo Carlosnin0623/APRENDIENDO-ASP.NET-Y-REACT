@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\utilidades\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\utilidades\\automapperprofiles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\entidades\\peliculagenero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\entidades\\peliculagenero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\dtos\\peliculasdetallesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\dtos\\peliculasdetallesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\dtos\\generodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\dtos\\generodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\dtos\\peliculadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\dtos\\peliculadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\controllers\\peliculascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\controllers\\peliculascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\dtos\\peliculasputgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\dtos\\peliculasputgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\dtos\\peliculadetallesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\dtos\\peliculadetallesdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\carlos alberto nin\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,85 +30,46 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PeliculaGenero.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Entidades\\PeliculaGenero.cs",
-              "RelativeDocumentMoniker": "PeliculasApi\\Entidades\\PeliculaGenero.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Entidades\\PeliculaGenero.cs",
-              "RelativeToolTip": "PeliculasApi\\Entidades\\PeliculaGenero.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "PeliculaDetallesDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculaDetallesDTO.cs",
+              "RelativeDocumentMoniker": "PeliculasApi\\DTOs\\PeliculaDetallesDTO.cs",
+              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculaDetallesDTO.cs",
+              "RelativeToolTip": "PeliculasApi\\DTOs\\PeliculaDetallesDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T16:34:36.629Z",
+              "WhenOpened": "2026-02-04T01:20:47.738Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GeneroDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\GeneroDTO.cs",
-              "RelativeDocumentMoniker": "PeliculasApi\\DTOs\\GeneroDTO.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\GeneroDTO.cs",
-              "RelativeToolTip": "PeliculasApi\\DTOs\\GeneroDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "PeliculasPutGetDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculasPutGetDTO.cs",
+              "RelativeDocumentMoniker": "PeliculasApi\\DTOs\\PeliculasPutGetDTO.cs",
+              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculasPutGetDTO.cs",
+              "RelativeToolTip": "PeliculasApi\\DTOs\\PeliculasPutGetDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T16:32:21.688Z",
+              "WhenOpened": "2026-02-04T01:12:40.275Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AutoMapperProfiles.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Utilidades\\AutoMapperProfiles.cs",
-              "RelativeDocumentMoniker": "PeliculasApi\\Utilidades\\AutoMapperProfiles.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Utilidades\\AutoMapperProfiles.cs",
-              "RelativeToolTip": "PeliculasApi\\Utilidades\\AutoMapperProfiles.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAcwDwAAABzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T16:25:15.536Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PeliculasDetallesDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculasDetallesDTO.cs",
-              "RelativeDocumentMoniker": "PeliculasApi\\DTOs\\PeliculasDetallesDTO.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculasDetallesDTO.cs",
-              "RelativeToolTip": "PeliculasApi\\DTOs\\PeliculasDetallesDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T15:48:46.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "PeliculasController.cs",
               "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\PeliculasController.cs",
               "RelativeDocumentMoniker": "PeliculasApi\\Controllers\\PeliculasController.cs",
               "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\PeliculasController.cs",
               "RelativeToolTip": "PeliculasApi\\Controllers\\PeliculasController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAkwEsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAwD4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-01T14:26:18.07Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PeliculaDTO.cs",
-              "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculaDTO.cs",
-              "RelativeDocumentMoniker": "PeliculasApi\\DTOs\\PeliculaDTO.cs",
-              "ToolTip": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculaDTO.cs",
-              "RelativeToolTip": "PeliculasApi\\DTOs\\PeliculaDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-01T14:42:59.154Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Carlos Alberto Nin\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Program.cs",
               "RelativeDocumentMoniker": "PeliculasApi\\Program.cs",
@@ -128,8 +77,7 @@
               "RelativeToolTip": "PeliculasApi\\Program.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAAQwDMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T20:19:41.487Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T20:19:41.487Z"
             }
           ]
         }
