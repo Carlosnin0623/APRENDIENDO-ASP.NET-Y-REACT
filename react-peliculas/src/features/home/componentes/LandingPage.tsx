@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import ListadoPeliculas from '../../peliculas/componentes/ListadoPeliculas';
 import type LandingPageDTO from '../modelos/LandingPageDTO';
 import clienteAPI from '../../../api/clienteAxios';
+import AlertaContext from '../../peliculas/utilidades/AlertaContex';
 
 export default function LandingPage() {
 
@@ -10,16 +11,24 @@ export default function LandingPage() {
     
       useEffect(() => {
          clienteAPI.get<LandingPageDTO>('/peliculas/landing').then(res => setPeliculas(res.data));
-      }, [])
+      }, []);
+
+
+      function cargarDatos(){
+         clienteAPI.get<LandingPageDTO>(`/peliculas/landing`).then(res => setPeliculas(res.data))
+      }
     
 
     return (
         <>
-            <h3>En Cines</h3>
+        <AlertaContext.Provider value={() => cargarDatos()}>
+             <h3>En Cines</h3>
             <ListadoPeliculas peliculas={peliculas.enCines} />
 
             <h3>Próximos Estrenos</h3>
             <ListadoPeliculas peliculas={peliculas.proximosEstrenos} />
+   
+        </AlertaContext.Provider>
         </>
     )
 }

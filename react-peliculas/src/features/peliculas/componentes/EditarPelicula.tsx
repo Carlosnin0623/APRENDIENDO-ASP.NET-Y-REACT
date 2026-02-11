@@ -1,65 +1,62 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import type PeliculaCreacion from "../modelos/PeliculaCreacion.model";
 import FormularioPelicula from "./FormularioPelicula";
 import type { SubmitHandler } from "react-hook-form";
 import Cargando from "../../../componentesGlobales/Cargando";
-import type Genero from "../../generos/modelos/Genero.model";
-import type Cine from "../../cines/modelos/Cine.model";
-import type ActorPelicula from "../modelos/ActorPelicula.model";
+import type PeliculasPutGet from "../modelos/PeliculaPutGet";
+import clienteAPI from "../../../api/clienteAxios";
+import formatearFecha from "../../../utilidades/formatearFecha";
+import convertirPeliculaCreacionAFormData from "../utilidades/convertirPeliculaCreacionAFormData";
+import { extraerErrores } from "../../../utilidades/extraerErrores";
+import type { AxiosError } from "axios";
 
 export default function EditarPelicula() {
 
   const [modelo, setModelo] = useState<PeliculaCreacion | undefined>(undefined)
+  const [peliculaPutGet, setPeliculaPutGet] = useState<PeliculasPutGet>();
   const { id } = useParams();
+  const [errores, setErrores] = useState<string[]>([]);
+  const navigate = useNavigate();
 
 
   useEffect(() => {
-    setTimeout(() => {
-      setModelo({ titulo: 'Avenders' + id, fechaLanzamiento: '2020-05-11', trailer: 'abc', poster: 'https://cdn.marvel.com/content/2x/avengersendgame_lob_mas_mob_01.jpg' })
-    }, 500)
+    clienteAPI.get<PeliculasPutGet>(`/peliculas/putget/${id}`).then(res => {
+      const pelicula = res.data.pelicula;
+      const peliculaCreacion : PeliculaCreacion = {
+        titulo: pelicula.titulo,
+        fechaLanzamiento: formatearFecha(pelicula.fechaLanzamiento),
+        poster: pelicula.poster,
+        trailer: pelicula.trailer
+      }
 
+      setModelo(peliculaCreacion);
+      setPeliculaPutGet(res.data);
+    })
   }, [id]);
 
   const onSubmit: SubmitHandler<PeliculaCreacion> = async (data) => {
-    console.log('Editando película...');
-    await new Promise(resolve => setTimeout(resolve, 500));
-    console.log(data);
+     try{
+      
+      const formData = convertirPeliculaCreacionAFormData(data);
+      await clienteAPI.putForm(`/peliculas/${id}`, formData);
+      navigate(`/peliculas/${id}`);
+     }catch(err){
+      const errores = extraerErrores(err as AxiosError);
+      setErrores(errores);
+     }
   }
 
-  const generosSeleccionados: Genero[] = [
-    { id: 2, nombre: 'Drama' }
-  ];
-  const generosNoSeleccionados: Genero[] = [
-    { id: 1, nombre: 'Acción' },
-    { id: 3, nombre: 'Conedia' }
-  ]
-
-  const cinesSeleccionados: Cine[] = [
-    { id: 1, nombre: 'Agora', latitud: 0, longitud: 0}
-  ];
-  const cinesNoSeleccionados: Cine[] = [
-    { id: 2, nombre: 'Sambil', latitud: 0, longitud: 0}
-  ];
-
-  const actoresSeleccionados: ActorPelicula[] = [
-    {
-      id: 1,
-      nombre: 'Tom Holland',
-      personaje: 'Spider-Man',
-      foto: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Tom_Holland_during_pro-am_Wentworth_golf_club_2023-2.jpg/250px-Tom_Holland_during_pro-am_Wentworth_golf_club_2023-2.jpg'
-    },
-  ]
 
   return (
     <>
       <h3>Editar Película</h3>
-      {modelo ? <FormularioPelicula errores={[]} modelo={modelo} onSubmit={onSubmit}
-      generosNoSeleccionados={generosNoSeleccionados}
-      generosSeleccionados={generosSeleccionados}
-      cinesSeleccionados={cinesSeleccionados}
-      cinesNoSeleccionados={cinesNoSeleccionados}
-      actoresSeleccionados={actoresSeleccionados}  /> : <Cargando />}
+      {modelo && peliculaPutGet ? <FormularioPelicula errores={errores} modelo={modelo} onSubmit={onSubmit}
+      generosNoSeleccionados={peliculaPutGet.generosNoSeleccionados}
+      generosSeleccionados={peliculaPutGet.generosSeleccionados}
+      cinesSeleccionados={peliculaPutGet.cinesSeleccionados}
+      cinesNoSeleccionados={peliculaPutGet.cinesNoSeleccionados}
+      actoresSeleccionados={peliculaPutGet.actores}  /> : <Cargando />}
     </>
 
   )
