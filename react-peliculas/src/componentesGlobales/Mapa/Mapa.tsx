@@ -16,12 +16,12 @@ export default function Mapa(props: MapaProps){
             
             />
 
-            <ClickMapa setPunto={coordenada => {
+            {props.editable ? <ClickMapa setPunto={coordenada => {
                 setCoordenadas([coordenada]);
                 if(props.LugarSeleccionado){
                     props.LugarSeleccionado(coordenada);
                 }
-            }} />
+            }} /> : undefined}
 
             {coordenadas?.map(coordenada => <Marker key={coordenada.lat + coordenada.lng} 
             position={[coordenada.lat, coordenada.lng]}>
@@ -37,6 +37,7 @@ export default function Mapa(props: MapaProps){
 interface MapaProps{
     LugarSeleccionado?: (coordenada: Coordenada) => void;
     coordenadas?: Coordenada[];
+    editable: boolean;
 
 }
 

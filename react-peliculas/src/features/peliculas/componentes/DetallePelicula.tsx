@@ -3,6 +3,8 @@ import { useParams } from "react-router";
 import clienteAPI from "../../../api/clienteAxios";
 import type Pelicula from "../modelos/pelicula.model";
 import Cargando from "../../../componentesGlobales/Cargando";
+import Mapa from "../../../componentesGlobales/Mapa/Mapa";
+import type Coordenada from "../../../componentesGlobales/Mapa/Coordenada.model";
 
 export default function DetallePelicula(){
 
@@ -28,6 +30,13 @@ export default function DetallePelicula(){
         const objURL = new URL(url);
         const videoId = objURL.searchParams.get('v');
         return videoId ? `https://www.youtube.com/embed/${videoId}` : undefined;
+    }
+
+    function transformarCoordenadas(): Coordenada[]{
+        return pelicula!.cines!.map(c => {
+            const coordenada: Coordenada = {lat: c.latitud, lng: c.longitud, mensaje: c.nombre}
+            return coordenada
+        })
     }
 
     return (
@@ -83,7 +92,14 @@ export default function DetallePelicula(){
                         ))}
                       </div>
                   </div>
-               )  }
+               )}
+
+
+               {pelicula.cines && pelicula.cines.length > 0 && 
+                <div className="w-100"> 
+                  <h2>Mostrándose en los siguientes cines</h2>
+                  <Mapa coordenadas={transformarCoordenadas()} editable={false} />
+               </div>}
            </div>
         </>
     )

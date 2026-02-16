@@ -11,3 +11,4 @@ wwwroot\peliculas\f6257097-4b9e-4019-b089-a97ce47f4b70.jpg
 wwwroot\peliculas\b9cbf095-824e-4f8f-81dc-8bf0d91a0818.png
 wwwroot\peliculas\9f04f0e1-a213-4274-8086-a548888c8255.png
 wwwroot\peliculas\2ebf0974-90c1-46c6-aa2b-a8a8cddabe32.png
+wwwroot\peliculas\a76ba05a-7390-496c-881c-c4f2390dd9cb.jpeg

@@ -1,10 +1,41 @@
 import { useForm, type SubmitHandler } from "react-hook-form"
 import Boton from "../../../componentesGlobales/Boton"
 import type Genero from "../../generos/modelos/Genero.model"
+import { useEffect, useState } from "react";
+import clienteAPI from "../../../api/clienteAxios";
+import type Pelicula from "../modelos/pelicula.model";
+import ListadoPeliculas from "./ListadoPeliculas";
 
 
 export default function FiltrarPeliculas(){
 
+    const [generos, setGeneros] = useState<Genero[]>([]);
+
+    const [peliculas, setPeliculas] = useState<Pelicula[]>([]);
+
+    useEffect(() => {
+       clienteAPI.get<Genero[]>('/generos/todos').then(res => setGeneros(res.data));
+
+    }, []);
+
+
+    useEffect(() => {
+     buscarPeliculas(valorInicial);
+
+     
+    }, [generos])
+
+
+   async function buscarPeliculas(valores: FormType ){
+      try{
+        const respuesta = await clienteAPI.get<Pelicula[]>('/peliculas/filtrar',{params: valores})
+        setPeliculas(respuesta.data);
+           
+      }catch(err){
+         console.error(err);
+      }
+        
+    }
 
     const valorInicial: FormType = {
         titulo: '',
@@ -18,12 +49,10 @@ export default function FiltrarPeliculas(){
         defaultValues: valorInicial
     });
 
-    const generos: Genero[] = [{id: 1, nombre: 'Acción'}, {id: 2, nombre: 'Comedia'} ];
+    
 
     const onSubmit: SubmitHandler<FormType> = async (data) => {
-        console.log('Filtrando....');
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        console.log(data);
+       await buscarPeliculas(data);
     }
 
 
@@ -63,6 +92,11 @@ export default function FiltrarPeliculas(){
                 <Boton onClick={() =>reset()} className="btn btn-danger ms-2">Limpiar</Boton>
               </div>
            </form>
+
+
+           <div className="mt-4">
+               <ListadoPeliculas peliculas={peliculas} />
+           </div>
         </>
     )
 }

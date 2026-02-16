@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using PeliculasApi.DTOs;
 using PeliculasApi.Entidades;
 using PeliculasApi.Utilidades;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace PeliculasApi.Controllers
@@ -33,12 +34,33 @@ namespace PeliculasApi.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet] // api/generos
         [OutputCache(Tags = [cacheTag])] // Con esto ya le estamos agregando Cache a una de las peticiones https
         public async Task<List<GeneroDTO>> Get([FromQuery] PaginacionDTO paginacion) // Recibir datos o mostrar
         {
             // Esto es para paginar los registros de la tabla generos //
             return await Get<Genero, GeneroDTO>(paginacion, ordenarPor: g => g.Nombre);
+        }
+
+
+        [HttpGet("todos")] // api/generos/todos
+        [OutputCache(Tags = [cacheTag])] // Con esto ya le estamos agregando Cache a una de las peticiones https
+        public async Task<List<GeneroDTO>> Get() // Recibir datos o mostrar
+        {
+            // Esto es para paginar los registros de la tabla generos //
+            return await Get<Genero, GeneroDTO>(ordenarPor: g => g.Nombre);
+        }
+
+        protected async Task<List<TDTO>> Get<TEntidad, TDTO>(PaginacionDTO paginacion, Expression<Func<TEntidad, Object>> ordenarPor)
+           where TEntidad : class  // Restricction para especificar que TEntidad debe ser un clase
+        {
+            var queryable = context.Set<TEntidad>().AsQueryable();
+            await HttpContext.InsertarParametrosPaginacionEnCabezera(queryable);
+            return await queryable
+               .OrderBy(ordenarPor) // Para ordenar ascendentemente y OrderByDescending(g => g.Id) // Para ordenar decendientemente
+               .Paginar(paginacion)
+               .ProjectTo<TDTO>(mapper.ConfigurationProvider).ToListAsync();
+
         }
 
         /* [HttpGet("{id}/{nombre?}")] /* El simboolo ? significa que el nombre es opcional y no siempre debe estar presente */

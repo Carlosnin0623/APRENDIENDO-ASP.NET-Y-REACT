@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\loteka\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\controllers\\generoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\controllers\\generoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\loteka\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\controllers\\custombasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\controllers\\custombasecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\loteka\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\controllers\\peliculascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\controllers\\peliculascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|c:\\users\\loteka\\desktop\\aprendiendo-asp.net-y-react\\peliculasapi\\peliculasapi\\dtos\\peliculasfiltrardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91AB0E19-3909-49BC-99E6-BE27D632733B}|PeliculasApi\\PeliculasApi.csproj|solutionrelative:peliculasapi\\dtos\\peliculasfiltrardto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,20 +26,60 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PeliculasFiltrarDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculasFiltrarDTO.cs",
+              "RelativeDocumentMoniker": "PeliculasApi\\DTOs\\PeliculasFiltrarDTO.cs",
+              "ToolTip": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\DTOs\\PeliculasFiltrarDTO.cs",
+              "RelativeToolTip": "PeliculasApi\\DTOs\\PeliculasFiltrarDTO.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T17:08:17.462Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GenerosController.cs",
+              "DocumentMoniker": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\GenerosController.cs",
+              "RelativeDocumentMoniker": "PeliculasApi\\Controllers\\GenerosController.cs",
+              "ToolTip": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\GenerosController.cs",
+              "RelativeToolTip": "PeliculasApi\\Controllers\\GenerosController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAACgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T16:51:23.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomBaseController.cs",
+              "DocumentMoniker": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\CustomBaseController.cs",
+              "RelativeDocumentMoniker": "PeliculasApi\\Controllers\\CustomBaseController.cs",
+              "ToolTip": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\CustomBaseController.cs",
+              "RelativeToolTip": "PeliculasApi\\Controllers\\CustomBaseController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAAB0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T16:45:14.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "PeliculasController.cs",
               "DocumentMoniker": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\PeliculasController.cs",
               "RelativeDocumentMoniker": "PeliculasApi\\Controllers\\PeliculasController.cs",
               "ToolTip": "C:\\Users\\Loteka\\Desktop\\APRENDIENDO-ASP.NET-Y-REACT\\PeliculasApi\\PeliculasApi\\Controllers\\PeliculasController.cs",
               "RelativeToolTip": "PeliculasApi\\Controllers\\PeliculasController.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAMMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAUwHMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-30T15:08:02.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-30T15:08:02.6Z"
             }
           ]
         }
