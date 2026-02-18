@@ -21,8 +21,6 @@ export default function FiltrarPeliculas(){
 
     useEffect(() => {
      buscarPeliculas(valorInicial);
-
-     
     }, [generos])
 
 
